@@ -4,7 +4,7 @@
 
 ### Remove existing configuration
 
-````bash
+```bash
 # required
 mv ~/.config/nvim{,.bak}
 
