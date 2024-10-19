@@ -40,4 +40,10 @@ map("n", "<leader>ms", "<cmd>Mason<CR>", {})
 
 -- LSP
 map("n", "K", vim.lsp.buf.hover, {})
-
+map("n", "gd", vim.lsp.buf.definition, {})
+map("n", "gD", vim.lsp.buf.declaration, {})
+map("n", "gi", vim.lsp.buf.implementation, {})
+map("n", "gr", vim.lsp.buf.references, {})
+map("n", "<C-k>", vim.lsp.buf.signature_help, {})
+map("n", "<leader>rn", vim.lsp.buf.rename, {})
+map("n", "<leader>ca", vim.lsp.buf.code_action, {})
