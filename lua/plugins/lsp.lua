@@ -16,11 +16,11 @@ return {
           "docker_compose_language_service",
           "gopls",
           "html",
-          "eslint",
           "jsonls",
           "lua_ls",
           "cssls",
           "rust_analyzer",
+          "ts_ls",
         },
       })
     end,
@@ -49,5 +49,5 @@ return {
       lspconfig.cssls.setup({})
       lspconfig.rust_analyzer.setup({})
     end,
-  }
+  },
 }

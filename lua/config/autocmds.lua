@@ -1,8 +1,8 @@
-local function cmd(mode, cmd) 
+local function cmd(mode, command)
   vim.api.nvim_create_autocmd(mode, {
     pattern = "*",
     callback = function()
-      vim.cmd(cmd)
+      vim.cmd(command)
     end,
   })
 end
