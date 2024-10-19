@@ -23,5 +23,11 @@ return {
 	  },
 	},
       },
+      window = {
+        mappings = {
+          ["h"] = "close_all_subnodes",
+          ["l"] = "open",
+        },
+      },
     },
 }

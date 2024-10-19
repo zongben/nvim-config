@@ -34,3 +34,10 @@ map("n", "<leader>fh", builtin.help_tags, {})
 
 -- Copilot
 map("i", "<C-j>", 'copilot#Accept("\\<CR>")', { expr = true, script = true, replace_keycodes = false })
+
+-- Mason
+map("n", "<leader>ms", "<cmd>Mason<CR>", {})
+
+-- LSP
+map("n", "K", vim.lsp.buf.hover, {})
+
