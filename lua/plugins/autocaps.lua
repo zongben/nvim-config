@@ -1,3 +1,3 @@
 return {
-  "ZongBen/AutoCaps.nvim",
+	"ZongBen/AutoCaps.nvim",
 }
