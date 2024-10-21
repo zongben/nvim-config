@@ -4,6 +4,7 @@ return {
   config = function()
     require("toggleterm").setup({
       open_mapping = [[<c-/>]],
+      size = 25,
     })
 
     local Terminal = require("toggleterm.terminal").Terminal
