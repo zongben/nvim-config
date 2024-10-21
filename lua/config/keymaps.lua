@@ -8,7 +8,6 @@ end
 
 -- General
 map({ "n" }, "s", "<nop>", {})
-map({ "v", "o" }, "a", "2i", {})
 
 -- better up/down
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true })
@@ -36,6 +35,9 @@ map("n", "<leader>bP", "<cmd>BufferLineGroupClose ungrouped<CR>", {})
 
 -- Lazy
 map("n", "<leader>l", "<cmd>Lazy<CR>", {})
+
+-- Lazygit
+map("n", "<leader>gg", "<cmd>lua Lazygit_toggle()<CR>", {})
 
 -- Telescope
 local builtin = require("telescope.builtin")
