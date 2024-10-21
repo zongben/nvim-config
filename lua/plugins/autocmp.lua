@@ -3,6 +3,14 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 	},
 	{
+		"ray-x/lsp_signature.nvim",
+		event = "VeryLazy",
+		opts = {},
+		config = function(_, opts)
+			require("lsp_signature").setup(opts)
+		end,
+	},
+	{
 		"hrsh7th/nvim-cmp",
 		config = function()
 			local cmp = require("cmp")
@@ -10,7 +18,6 @@ return {
 				window = {
 					completion = cmp.config.window.bordered(),
 					documentation = cmp.config.window.bordered(),
-					max_height = 15,
 				},
 				mapping = cmp.mapping.preset.insert({
 					["<C-y>"] = cmp.mapping.confirm({ select = true }),
