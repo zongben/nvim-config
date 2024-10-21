@@ -33,6 +33,7 @@ return {
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
+			local home_dir = os.getenv("HOME")
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
 				settings = {
@@ -48,7 +49,7 @@ return {
 			})
 			lspconfig.omnisharp.setup({
 				capabilities = capabilities,
-				cmd = { "dotnet", "/home/ben/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll" },
+				cmd = { "dotnet", home_dir .. "/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll" },
 				settings = {
 					FormattingOptions = {
 						-- Enables support for reading code style, naming convention and analyzer
