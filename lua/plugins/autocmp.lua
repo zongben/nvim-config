@@ -10,6 +10,7 @@ return {
 				window = {
 					completion = cmp.config.window.bordered(),
 					documentation = cmp.config.window.bordered(),
+					max_height = 15,
 				},
 				mapping = cmp.mapping.preset.insert({
 					["<C-y>"] = cmp.mapping.confirm({ select = true }),
