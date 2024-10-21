@@ -1,21 +1,29 @@
 return {
 	{
 		"echasnovski/mini.surround",
-		version = "false",
 		config = function()
-			require("mini.surround").setup()
+			require("mini.surround").setup({
+				mappings = {
+					add = "<leader>sa",
+					delete = "<leader>sd",
+					find = "",
+					highlight = "",
+					replace = "<leader>sr",
+					update_n_lines = "",
+					suffix_last = "",
+					suffix_next = "",
+				},
+			})
 		end,
 	},
 	{
 		"echasnovski/mini.pairs",
-		version = "false",
 		config = function()
 			require("mini.pairs").setup()
 		end,
 	},
 	{
 		"echasnovski/mini.move",
-		version = "false",
 		config = function()
 			require("mini.move").setup()
 		end,

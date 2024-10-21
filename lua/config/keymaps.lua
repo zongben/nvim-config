@@ -1,10 +1,20 @@
 local function map(mode, lhs, rhs, opts)
-    local options = { noremap = true, silent = true }
-    if opts then
-        options = vim.tbl_extend("force", options, opts)
-    end
-    vim.keymap.set(mode, lhs, rhs, options)
+	local options = { noremap = true, silent = true }
+	if opts then
+		options = vim.tbl_extend("force", options, opts)
+	end
+	vim.keymap.set(mode, lhs, rhs, options)
 end
+
+-- General
+map({ "n", "v" }, "s", "<nop>", {})
+
+-- better up/down
+map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true })
+map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true })
+
+-- Clear search with <esc>
+map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", {})
 
 -- Window
 map("n", "<C-h>", "<C-w>h", {})
@@ -48,3 +58,6 @@ map("n", "<C-k>", vim.lsp.buf.signature_help, {})
 map("n", "<leader>rn", vim.lsp.buf.rename, {})
 map("n", "<leader>ca", vim.lsp.buf.code_action, {})
 map("n", "<leader>cf", vim.lsp.buf.format, {})
+
+-- quit
+map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
