@@ -7,7 +7,8 @@ local function map(mode, lhs, rhs, opts)
 end
 
 -- General
-map({ "n", "v" }, "s", "<nop>", {})
+map({ "n" }, "s", "<nop>", {})
+map({ "v", "o" }, "a", "2i", {})
 
 -- better up/down
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true })
@@ -59,5 +60,5 @@ map("n", "<leader>rn", vim.lsp.buf.rename, {})
 map("n", "<leader>ca", vim.lsp.buf.code_action, {})
 map("n", "<leader>cf", vim.lsp.buf.format, {})
 
--- quit
+-- Quit
 map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
