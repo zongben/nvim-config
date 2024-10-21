@@ -47,9 +47,6 @@ return {
 				capabilities = capabilities,
 			})
 			lspconfig.omnisharp.setup({
-				inlay_hints = {
-					enabled = false,
-				},
 				capabilities = capabilities,
 				cmd = { "dotnet", "/home/ben/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll" },
 				settings = {
