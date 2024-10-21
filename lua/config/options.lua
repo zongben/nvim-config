@@ -18,6 +18,7 @@ vim.opt.completeopt = "menu,menuone,noselect"
 vim.opt.ignorecase = true
 vim.opt.linebreak = true
 vim.opt.mouse = "a"
+vim.opt.mousemoveevent = true
 vim.opt.number = true
 vim.opt.showmode = false
 vim.opt.smartcase = true
