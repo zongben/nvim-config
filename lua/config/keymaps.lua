@@ -1,9 +1,9 @@
 local function map(mode, lhs, rhs, opts)
-	local options = { noremap = true, silent = true }
-	if opts then
-		options = vim.tbl_extend("force", options, opts)
-	end
-	vim.keymap.set(mode, lhs, rhs, options)
+  local options = { noremap = true, silent = true }
+  if opts then
+    options = vim.tbl_extend("force", options, opts)
+  end
+  vim.keymap.set(mode, lhs, rhs, options)
 end
 
 -- General
@@ -65,7 +65,7 @@ map("n", "<leader>ms", "<cmd>Mason<CR>", {})
 map("n", "K", vim.lsp.buf.hover, {})
 map("n", "gd", vim.lsp.buf.definition, {})
 map("n", "gD", vim.lsp.buf.declaration, {})
-map("n", "gi", vim.lsp.buf.implementation, {})
+map("n", "gI", vim.lsp.buf.implementation, {})
 map("n", "gr", vim.lsp.buf.references, {})
 map("n", "<C-k>", vim.lsp.buf.signature_help, {})
 map("n", "<leader>rn", vim.lsp.buf.rename, {})
