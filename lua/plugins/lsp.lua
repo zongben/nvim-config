@@ -47,7 +47,6 @@ return {
 
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
-				cmd = { "lua-language-server", packagePath .. slash .. "lua-language-server" .. slash .. "main.lua" },
 				settings = {
 					Lua = {
 						diagnostics = {
