@@ -35,15 +35,18 @@ return {
       local lspconfig = require("lspconfig")
 
       local packagePath
+      local slash
       if os.getenv("OS") == "Windows_NT" then
-        packagePath = os.getenv("LOCALAPPDATA") .. "/nvim-data/mason/packages"
+        packagePath = os.getenv("LOCALAPPDATA") .. "\\nvim-data\\mason\\packages"
+        slash = "\\"
       else
         packagePath = os.getenv("HOME") .. "/.local/share/nvim/mason/packages"
+        slash = "/"
       end
 
       lspconfig.lua_ls.setup({
         capabilities = capabilities,
-        cmd = { "lua-language-server", packagePath .. "/lua-language-server/main.lua" },
+        cmd = { "lua-language-server", packagePath .. slash .. "lua-language-server" .. slash .. "main.lua" },
         settings = {
           Lua = {
             diagnostics = {
@@ -57,7 +60,10 @@ return {
       })
       lspconfig.omnisharp.setup({
         capabilities = capabilities,
-        cmd = { "dotnet", packagePath .. "/omnisharp/libexec/OmniSharp.dll" },
+        cmd = {
+          "dotnet",
+          packagePath .. slash .. "omnisharp" .. slash .. "libexec" .. slash .. "OmniSharp.dll",
+        },
         settings = {
           FormattingOptions = {
             -- Enables support for reading code style, naming convention and analyzer
