@@ -6,6 +6,7 @@
 
 For linux
 ```bash
+# bash
 # required
 mv ~/.config/nvim{,.bak}
 
@@ -16,7 +17,8 @@ mv ~/.cache/nvim{,.bak}
 ```
 
 For windows
-```ps1
+```powershell
+# powershell
 # required
 Move-Item $env:LOCALAPPDATA\nvim $env:LOCALAPPDATA\nvim.bak
 
@@ -28,10 +30,12 @@ Move-Item $env:LOCALAPPDATA\nvim-data $env:LOCALAPPDATA\nvim-data.bak
 
 For linux
 ```bash
+# bash
 git clone https://github.com/ZongBen/nvim-config.git ~/.config/nvim
 ```
 
 For windows
-```ps1
+```powershell
+# powershell
 git clone https://github.com/ZongBen/nvim-config.git $env:LOCALAPPDATA\nvim
 ```
