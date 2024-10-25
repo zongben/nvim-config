@@ -1,3 +1,0 @@
-return {
-	"ZongBen/AutoCaps.nvim",
-}
