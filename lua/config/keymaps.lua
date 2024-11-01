@@ -31,6 +31,7 @@ map("t", "<C-Up>", "<cmd>resize +2<CR>", {})
 map("t", "<C-Down>", "<cmd>resize -2<CR>", {})
 map("t", "<C-Left>", "<cmd>vertical resize +2<CR>", {})
 map("t", "<C-Right>", "<cmd>vertical resize -2<CR>", {})
+map("t", "<esc>", "<C-\\><C-n>", {})
 
 -- Neotree
 map("n", "\\", "<cmd>Neotree reveal<CR>", {})
