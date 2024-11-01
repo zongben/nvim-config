@@ -24,6 +24,7 @@ return {
 					"cssls",
 					"rust_analyzer",
 					"ts_ls",
+          "eslint",
 				},
 			})
 		end,
