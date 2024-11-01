@@ -39,6 +39,8 @@ map("n", "\\", "<cmd>Neotree reveal<CR>", {})
 -- Bufferline
 map("n", "<S-h>", "<cmd>BufferLineCyclePrev<CR>", {})
 map("n", "<S-l>", "<cmd>BufferLineCycleNext<CR>", {})
+map("n", "<S-A-h>", "<cmd>BufferLineMovePrev<CR>", {})
+map("n", "<S-A-l>", "<cmd>BufferLineMoveNext<CR>", {})
 map("n", "<leader>bd", "<cmd>bd<CR>", {})
 map("n", "<leader>bD", "<cmd>BufferLineCloseOthers<CR>", {})
 map("n", "<leader>bp", "<cmd>BufferLineTogglePin<CR>", {})
