@@ -62,13 +62,15 @@ map("n", "<leader>gg", "<cmd>lua Lazygit_toggle()<CR>", {})
 local builtin = require("telescope.builtin")
 map("n", "<leader>ff", builtin.find_files, {})
 map("n", "<leader>fg", builtin.live_grep, {})
--- map("n", "<leader>fh", builtin.help_tags, {})
+map("n", "<leader>fs", builtin.lsp_document_symbols, {})
 map("n", "<leader>fd", builtin.diagnostics, {})
 map("n", "gd", builtin.lsp_definitions, {})
 map("n", "gI", builtin.lsp_implementations, {})
 map("n", "gr", builtin.lsp_references, {})
 map("n", "gt", builtin.lsp_type_definitions, {})
 map("n", "<leader>fn", "<cmd>Telescope notify<CR>", {})
+map("n", "<leader>yh", "<cmd>Telescope yank_history<CR>", {})
+
 
 -- Copilot
 map("i", "<C-j>", 'copilot#Accept("\\<CR>")', { expr = true, script = true, replace_keycodes = false })
