@@ -19,6 +19,7 @@ return {
       typescript = { "prettier" },
       go = { "goimports" },
       cs = { "csharpier" },
+      xml = { "xmlformatter" },
     },
     default_format_opts = {
       lsp_format = "fallback",

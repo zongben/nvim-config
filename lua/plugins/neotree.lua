@@ -14,6 +14,14 @@ return {
           require("neo-tree.command").execute({ action = "close" })
         end,
       },
+      {
+        event = "neo_tree_buffer_enter",
+        handler = function(_)
+          vim.cmd([[
+            setlocal relativenumber
+          ]])
+        end,
+      }
     },
     filesystem = {
       window = {
