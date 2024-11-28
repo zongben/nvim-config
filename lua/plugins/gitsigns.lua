@@ -76,7 +76,6 @@ return {
         end)
 
         map('n', '<leader>gb', gitsigns.toggle_current_line_blame)
-        -- map('n', '<leader>gd', gitsigns.diffthis)
       end
     })
   end,
