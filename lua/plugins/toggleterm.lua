@@ -3,8 +3,12 @@ return {
 	version = "*",
 	config = function()
 		require("toggleterm").setup({
-			open_mapping = [[<c-/>]],
-			size = 22,
+			open_mapping = [[<C-\>]],
+      direction = 'float',
+      start_in_insert = true,
+      float_opts = {
+        border = "curved"
+      }
 		})
 
 		local Terminal = require("toggleterm.terminal").Terminal
