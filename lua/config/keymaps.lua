@@ -52,6 +52,12 @@ map("n", "<leader>bD", "<cmd>BufferLineCloseOthers<CR>", {})
 map("n", "<leader>bp", "<cmd>BufferLineTogglePin<CR>", {})
 map("n", "<leader>bP", "<cmd>BufferLineGroupClose ungrouped<CR>", {})
 
+-- Git
+map("n", "<leader>gd", "<cmd>DiffviewOpen<CR>", {})
+map("n", "<leader>gh", "<cmd>DiffviewFileHistory %<CR>", {})
+map("n", "<leader>gH", "<cmd>DiffviewFileHistory<CR>", {})
+map("n", "<leader>gc", "<cmd>DiffviewClose<CR>", {})
+
 -- Lazy
 map("n", "<leader>l", "<cmd>Lazy<CR>", {})
 
@@ -70,7 +76,6 @@ map("n", "gr", builtin.lsp_references, {})
 map("n", "gt", builtin.lsp_type_definitions, {})
 map("n", "<leader>fn", "<cmd>Telescope notify<CR>", {})
 map("n", "<leader>yh", "<cmd>Telescope yank_history<CR>", {})
-
 
 -- Copilot
 map("i", "<C-j>", 'copilot#Accept("\\<CR>")', { expr = true, script = true, replace_keycodes = false })
