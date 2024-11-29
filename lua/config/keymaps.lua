@@ -22,6 +22,9 @@ map("n", "<C-j>", "<C-w>j", {})
 map("n", "<C-k>", "<C-w>k", {})
 map("n", "<C-l>", "<C-w>l", {})
 
+-- Markdown
+map("n", "<leader>mp", "<cmd>MarkdownPreview<CR>", {})
+
 -- Terminal
 map("t", "<C-h>", "<cmd>wincmd h<CR>", {})
 map("t", "<C-j>", "<cmd>wincmd j<CR>", {})
