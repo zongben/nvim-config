@@ -1,7 +1,5 @@
 vim.g.copilot_no_tab_map = true
 vim.g.disable_autoformat = true
--- vim.g.loaded_netrw = 1
--- vim.g.loaded_netrwPlugin = 1
 
 vim.o.clipboard = "unnamedplus"
 
