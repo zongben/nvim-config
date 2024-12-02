@@ -3,7 +3,7 @@ return {
   config = function()
     require("yanky").setup({
       highlight = {
-        timeout = 150,
+        timer = 150,
       }
     })
     require("telescope").load_extension("yank_history")
