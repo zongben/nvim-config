@@ -45,6 +45,10 @@ end, { expr = true })
 -- Neotree
 map("n", "\\", "<cmd>Neotree reveal<CR>", {})
 
+-- NvimTree
+-- local nvim_tree_api = require("nvim-tree.api")
+-- map("n", "\\", "<cmd>NvimTreeToggle<CR>", {})
+
 -- Bufferline
 map("n", "H", "<cmd>BufferLineCyclePrev<CR>", {})
 map("n", "L", "<cmd>BufferLineCycleNext<CR>", {})
@@ -79,6 +83,8 @@ map("n", "gr", builtin.lsp_references, {})
 map("n", "gt", builtin.lsp_type_definitions, {})
 map("n", "<leader>fn", "<cmd>Telescope notify<CR>", {})
 map("n", "<leader>yh", "<cmd>Telescope yank_history<CR>", {})
+map("n", "<leader>fp", "<cmd>Telescope projects<CR>", {})
+
 
 -- Copilot
 map("i", "<C-j>", 'copilot#Accept("\\<CR>")', { expr = true, script = true, replace_keycodes = false })

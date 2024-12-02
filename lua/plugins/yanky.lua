@@ -1,8 +1,11 @@
 return {
   "gbprod/yanky.nvim",
-  opts = {
-    highlight = {
-      timer = 150,
-    },
-  },
+  config = function()
+    require("yanky").setup({
+      highlight = {
+        timeout = 150,
+      }
+    })
+    require("telescope").load_extension("yank_history")
+  end
 }
