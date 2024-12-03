@@ -17,23 +17,23 @@ map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true })
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", {})
 
 -- Window
+-- map("t", "<C-h>", "<cmd>wincmd h<CR>", {})
+-- map("t", "<C-j>", "<cmd>wincmd j<CR>", {})
+-- map("t", "<C-k>", "<cmd>wincmd k<CR>", {})
+-- map("t", "<C-l>", "<cmd>wincmd l<CR>", {})
 map("n", "<C-h>", "<C-w>h", {})
 map("n", "<C-j>", "<C-w>j", {})
 map("n", "<C-k>", "<C-w>k", {})
 map("n", "<C-l>", "<C-w>l", {})
+map("n", "<C-Up>", "<cmd>resize +2<CR>", {})
+map("n", "<C-Down>", "<cmd>resize -2<CR>", {})
+map("n", "<C-Left>", "<cmd>vertical resize +2<CR>", {})
+map("n", "<C-Right>", "<cmd>vertical resize -2<CR>", {})
 
 -- Markdown
 map("n", "<leader>mp", "<cmd>MarkdownPreview<CR>", {})
 
 -- Terminal
-map("t", "<C-h>", "<cmd>wincmd h<CR>", {})
-map("t", "<C-j>", "<cmd>wincmd j<CR>", {})
-map("t", "<C-k>", "<cmd>wincmd k<CR>", {})
-map("t", "<C-l>", "<cmd>wincmd l<CR>", {})
-map("t", "<C-Up>", "<cmd>resize +2<CR>", {})
-map("t", "<C-Down>", "<cmd>resize -2<CR>", {})
-map("t", "<C-Left>", "<cmd>vertical resize +2<CR>", {})
-map("t", "<C-Right>", "<cmd>vertical resize -2<CR>", {})
 map("t", "<esc>", function()
   if vim.bo.filetype ~= "toggleterm" then
     return "<C-\\><C-n>"
