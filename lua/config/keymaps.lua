@@ -1,9 +1,9 @@
 local function map(mode, lhs, rhs, opts)
-  local options = { noremap = true, silent = true }
-  if opts then
-    options = vim.tbl_extend("force", options, opts)
-  end
-  vim.keymap.set(mode, lhs, rhs, options)
+	local options = { noremap = true, silent = true }
+	if opts then
+		options = vim.tbl_extend("force", options, opts)
+	end
+	vim.keymap.set(mode, lhs, rhs, options)
 end
 
 -- General
@@ -30,16 +30,19 @@ map("n", "<C-Down>", "<cmd>resize -2<CR>", {})
 map("n", "<C-Left>", "<cmd>vertical resize +2<CR>", {})
 map("n", "<C-Right>", "<cmd>vertical resize -2<CR>", {})
 
--- Markdown
-map("n", "<leader>mp", "<cmd>MarkdownPreview<CR>", {})
-
 -- Terminal
 map("t", "<esc>", function()
-  if vim.bo.filetype ~= "toggleterm" then
-    return "<C-\\><C-n>"
-  else
-    return "<esc>"
-  end
+	if vim.bo.filetype ~= "toggleterm" then
+		return "<C-\\><C-n>"
+	else
+		return "<esc>"
+	end
+end, { expr = true })
+
+map("t", "<C-n>", function()
+	if vim.bo.filetype == "toggleterm" then
+		return "<C-\\><C-n>"
+	end
 end, { expr = true })
 
 -- Neotree
