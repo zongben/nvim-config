@@ -1,9 +1,9 @@
 local function map(mode, lhs, rhs, opts)
-	local options = { noremap = true, silent = true }
-	if opts then
-		options = vim.tbl_extend("force", options, opts)
-	end
-	vim.keymap.set(mode, lhs, rhs, options)
+  local options = { noremap = true, silent = true }
+  if opts then
+    options = vim.tbl_extend("force", options, opts)
+  end
+  vim.keymap.set(mode, lhs, rhs, options)
 end
 
 -- General
@@ -35,11 +35,11 @@ map("t", "<C-Down>", "<cmd>resize -2<CR>", {})
 map("t", "<C-Left>", "<cmd>vertical resize +2<CR>", {})
 map("t", "<C-Right>", "<cmd>vertical resize -2<CR>", {})
 map("t", "<esc>", function()
-	if vim.bo.filetype ~= "toggleterm" then
-		return "<C-\\><C-n>"
-	else
-		return "<esc>"
-	end
+  if vim.bo.filetype ~= "toggleterm" then
+    return "<C-\\><C-n>"
+  else
+    return "<esc>"
+  end
 end, { expr = true })
 
 -- Neotree
@@ -90,8 +90,8 @@ map("n", "K", vim.lsp.buf.hover, {})
 -- map("n", "gD", vim.lsp.buf.declaration, {})
 -- map("n", "<C-k>", vim.lsp.buf.signature_help, {})
 map("n", "<leader>rn", vim.lsp.buf.rename, {})
-map("n", "<leader>ca", vim.lsp.buf.code_action, {})
 map("n", "<leader>cf", vim.lsp.buf.format, {})
+map("n", "<leader>ca", require("actions-preview").code_actions, {})
 
 -- Quit
 map("n", "<leader>qq", "<cmd>qa<cr>", {})
