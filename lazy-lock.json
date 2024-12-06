@@ -1,7 +1,7 @@
 {
   "actions-preview.nvim": { "branch": "master", "commit": "9f52a01c374318e91337697ebed51c6fae57f8a4" },
   "bufferline.nvim": { "branch": "main", "commit": "261a72b90d6db4ed8014f7bda976bcdc9dd7ce76" },
-  "capsoff.nvim": { "branch": "main", "commit": "880abb8db27a434955234c879846af2dbb2ec821" },
+  "capsoff.nvim": { "branch": "main", "commit": "3ae4390a17aa249967e8ea7ae014a0a5ca37b1b3" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "39e2eda76828d88b773cc27a3f61d2ad782c922d" },
   "conform.nvim": { "branch": "master", "commit": "02fd64fb3d4b18ec029c0e0683c3dc3ec6d2c5b8" },
   "copilot.vim": { "branch": "release", "commit": "87038123804796ca7af20d1b71c3428d858a9124" },
