@@ -17,10 +17,6 @@ map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true })
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", {})
 
 -- Window
--- map("t", "<C-h>", "<cmd>wincmd h<CR>", {})
--- map("t", "<C-j>", "<cmd>wincmd j<CR>", {})
--- map("t", "<C-k>", "<cmd>wincmd k<CR>", {})
--- map("t", "<C-l>", "<cmd>wincmd l<CR>", {})
 map("n", "<C-h>", "<C-w>h", {})
 map("n", "<C-j>", "<C-w>j", {})
 map("n", "<C-k>", "<C-w>k", {})
@@ -29,6 +25,10 @@ map("n", "<C-Up>", "<cmd>resize +2<CR>", {})
 map("n", "<C-Down>", "<cmd>resize -2<CR>", {})
 map("n", "<C-Left>", "<cmd>vertical resize +2<CR>", {})
 map("n", "<C-Right>", "<cmd>vertical resize -2<CR>", {})
+-- map("t", "<C-h>", "<cmd>wincmd h<CR>", {})
+-- map("t", "<C-j>", "<cmd>wincmd j<CR>", {})
+-- map("t", "<C-k>", "<cmd>wincmd k<CR>", {})
+-- map("t", "<C-l>", "<cmd>wincmd l<CR>", {})
 
 -- Terminal
 map("t", "<esc>", function()
@@ -91,11 +91,11 @@ map("n", "<leader>ms", "<cmd>Mason<CR>", {})
 
 -- LSP
 map("n", "K", vim.lsp.buf.hover, {})
--- map("n", "gD", vim.lsp.buf.declaration, {})
--- map("n", "<C-k>", vim.lsp.buf.signature_help, {})
 map("n", "<leader>rn", vim.lsp.buf.rename, {})
 map("n", "<leader>cf", vim.lsp.buf.format, {})
 map("n", "<leader>ca", require("actions-preview").code_actions, {})
+-- map("n", "gD", vim.lsp.buf.declaration, {})
+-- map("n", "<C-k>", vim.lsp.buf.signature_help, {})
 
 -- Quit
 map("n", "<leader>qq", "<cmd>qa<cr>", {})
