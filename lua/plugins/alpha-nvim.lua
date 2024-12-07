@@ -7,6 +7,9 @@ return {
     -- Padding
     local dashboard_height = 25
     local top_padding = math.floor((vim.fn.winheight(0) - dashboard_height) / 2) - 1
+    if top_padding < 0 then
+      top_padding = 0
+    end
 
     -- Header
     local header = {
