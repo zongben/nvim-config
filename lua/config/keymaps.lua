@@ -93,5 +93,14 @@ map("n", "<leader>ca", require("actions-preview").code_actions, {})
 -- map("n", "gD", vim.lsp.buf.declaration, {})
 -- map("n", "<C-k>", vim.lsp.buf.signature_help, {})
 
+-- Snippets
+local ls = require("luasnip")
+map({ "i", "s" }, "<C-l>", function()
+		ls.expand_or_jump()
+end, {})
+map({ "i", "s" }, "<C-h>", function()
+		ls.jump(-1)
+end, {})
+
 -- Quit
 map("n", "<leader>qq", "<cmd>qa<cr>", {})
