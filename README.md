@@ -31,11 +31,11 @@ Move-Item $env:LOCALAPPDATA\nvim-data $env:LOCALAPPDATA\nvim-data.bak
 For linux
 ```bash
 # bash
-git clone https://github.com/ZongBen/nvim-config.git ~/.config/nvim
+git clone https://github.com/zongben/nvim-config.git ~/.config/nvim
 ```
 
 For windows
 ```powershell
 # powershell
-git clone https://github.com/ZongBen/nvim-config.git $env:LOCALAPPDATA\nvim
+git clone https://github.com/zongben/nvim-config.git $env:LOCALAPPDATA\nvim
 ```
