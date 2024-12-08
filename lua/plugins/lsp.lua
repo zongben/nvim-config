@@ -3,6 +3,17 @@ return {
     "Hoffs/omnisharp-extended-lsp.nvim",
   },
   {
+    "folke/lazydev.nvim",
+    ft = "lua", -- only load on lua files
+    opts = {
+      library = {
+        -- See the configuration section for more details
+        -- Load luvit types when the `vim.uv` word is found
+        { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+      },
+    },
+  },
+  {
     "williamboman/mason.nvim",
     config = function()
       require("mason").setup({
@@ -34,30 +45,20 @@ return {
   {
     "neovim/nvim-lspconfig",
     config = function()
-      local on_attach = require('gitsigns').on_attach
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       local lspconfig = require("lspconfig")
+      local utils = require("utils")
+      local packagePath = ""
+      local os_name = utils.get_os()
 
-      local packagePath
-      local slash
-      if os.getenv("OS") == "Windows_NT" then
-        packagePath = os.getenv("LOCALAPPDATA") .. "\\nvim-data\\mason\\packages"
-        slash = "\\"
+      if os_name == "Windows" then
+        packagePath = utils.combined_path(os.getenv("LOCALAPPDATA"), "nvim-data", "mason", "packages")
       else
-        packagePath = os.getenv("HOME") .. "/.local/share/nvim/mason/packages"
-        slash = "/"
+        packagePath = utils.combined_path(os.getenv("HOME"), ".local", "share", "nvim", "mason", "packages")
       end
 
       lspconfig.lua_ls.setup({
         capabilities = capabilities,
-        on_attach = on_attach,
-        settings = {
-          Lua = {
-            diagnostics = {
-              globals = { "vim" },
-            },
-          },
-        },
       })
       lspconfig.bashls.setup({
         capabilities = capabilities,
@@ -66,7 +67,7 @@ return {
         capabilities = capabilities,
         cmd = {
           "dotnet",
-          packagePath .. slash .. "omnisharp" .. slash .. "libexec" .. slash .. "OmniSharp.dll",
+          utils.combined_path(packagePath, "omnisharp", "libexec", "OmniSharp.dll"),
         },
         settings = {
           FormattingOptions = {

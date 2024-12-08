@@ -2,8 +2,7 @@ vim.g.mapleader = " "
 vim.g.copilot_no_tab_map = true
 vim.g.disable_autoformat = true
 
-vim.o.clipboard = "unnamedplus"
-
+vim.opt.clipboard = "unnamedplus"
 vim.opt.relativenumber = true
 vim.opt.termguicolors = true
 vim.opt.confirm = true

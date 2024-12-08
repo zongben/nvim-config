@@ -25,10 +25,6 @@ map("n", "<C-Up>", "<cmd>resize +2<CR>", {})
 map("n", "<C-Down>", "<cmd>resize -2<CR>", {})
 map("n", "<C-Left>", "<cmd>vertical resize +2<CR>", {})
 map("n", "<C-Right>", "<cmd>vertical resize -2<CR>", {})
--- map("t", "<C-h>", "<cmd>wincmd h<CR>", {})
--- map("t", "<C-j>", "<cmd>wincmd j<CR>", {})
--- map("t", "<C-k>", "<cmd>wincmd k<CR>", {})
--- map("t", "<C-l>", "<cmd>wincmd l<CR>", {})
 
 -- Terminal
 map("t", "<esc>", function()
