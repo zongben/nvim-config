@@ -1,3 +1,3 @@
 return {
-	"ZongBen/capsoff.nvim",
+	"zongben/capsoff.nvim",
 }
