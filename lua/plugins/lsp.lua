@@ -25,6 +25,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
+        automatic_installation = true,
 				ensure_installed = {
 					"bashls",
 					"omnisharp",
@@ -38,6 +39,7 @@ return {
 					"rust_analyzer",
 					"ts_ls",
 					"eslint",
+          "clangd",
 				},
 			})
 		end,
@@ -141,6 +143,9 @@ return {
 			lspconfig.ts_ls.setup({
 				capabilities = capabilities,
 			})
+      lspconfig.clangd.setup({
+        capabilities = capabilities,
+      })
 		end,
 	},
 }
