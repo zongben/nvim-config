@@ -15,6 +15,14 @@ local to = s("to", {
 
 local csharp = {
 	to,
+	s("pp", {
+		i(1, "public"),
+		t(" "),
+		i(2, "string"),
+		t(" "),
+		i(3, "Name"),
+		t(" { get; set; }"),
+	}),
 }
 
 local js_ts = {
@@ -26,7 +34,7 @@ local js_ts = {
 		i(2),
 		t("})"),
 	}),
-  to
+	to,
 }
 
 ls.add_snippets("javascript", js_ts)
