@@ -1,8 +1,5 @@
 return {
 	{
-		"Hoffs/omnisharp-extended-lsp.nvim",
-	},
-	{
 		"folke/lazydev.nvim",
 		ft = "lua", -- only load on lua files
 		opts = {
@@ -25,7 +22,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-        automatic_installation = true,
+				automatic_installation = true,
 				ensure_installed = {
 					"bashls",
 					"omnisharp",
@@ -39,13 +36,16 @@ return {
 					"rust_analyzer",
 					"ts_ls",
 					"eslint",
-          "clangd",
+					"clangd",
 				},
 			})
 		end,
 	},
 	{
 		"neovim/nvim-lspconfig",
+		dependencies = {
+			"Hoffs/omnisharp-extended-lsp.nvim",
+		},
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
@@ -143,9 +143,9 @@ return {
 			lspconfig.ts_ls.setup({
 				capabilities = capabilities,
 			})
-      lspconfig.clangd.setup({
-        capabilities = capabilities,
-      })
+			lspconfig.clangd.setup({
+				capabilities = capabilities,
+			})
 		end,
 	},
 }
