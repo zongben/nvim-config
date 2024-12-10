@@ -5,7 +5,15 @@ return {
       "saadparwaiz1/cmp_luasnip",
     },
     version = "v2.*",
-    build = "make install_jsregexp",
+    build = function ()
+      local utils = require("utils")
+      local os_name = utils.get_os()
+      if os_name == "Windows" then
+        return "make install_jsregexp CC=gcc.exe SHELL=C:\\Program Files\\Git\\bin\\sh.exe .SHELLFLAGS=-c"
+      else
+        return "make install_jsregexp"
+      end
+    end
   },
   {
     "ray-x/lsp_signature.nvim",
