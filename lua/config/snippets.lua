@@ -31,4 +31,4 @@ local js_ts = {
 
 ls.add_snippets("javascript", js_ts)
 ls.add_snippets("typescript", js_ts)
-ls.add_snippets("csharp", csharp)
+ls.add_snippets("cs", csharp)
