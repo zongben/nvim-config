@@ -42,6 +42,28 @@ return {
 		end,
 	},
 	{
+		"ray-x/lsp_signature.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("lsp_signature").setup({
+        floating_window = false,
+				hint_enable = true,
+        hint_prefix = {
+          above = "↙ ",
+          current = "← ",
+          below = "↖ "
+        },
+        always_trigger = true,
+        hint_inline = function ()
+          return false
+        end,
+				toggle_key = "<M-a>",
+				select_signature_key = "<M-n>",
+        move_cursor_key = "<M-x>",
+			})
+		end,
+	},
+	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			"Hoffs/omnisharp-extended-lsp.nvim",
