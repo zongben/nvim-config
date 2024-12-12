@@ -1,9 +1,9 @@
 local function map(mode, lhs, rhs, opts)
-	local options = { noremap = true, silent = true }
-	if opts then
-		options = vim.tbl_extend("force", options, opts)
-	end
-	vim.keymap.set(mode, lhs, rhs, options)
+  local options = { noremap = true, silent = true }
+  if opts then
+    options = vim.tbl_extend("force", options, opts)
+  end
+  vim.keymap.set(mode, lhs, rhs, options)
 end
 
 -- General
@@ -28,17 +28,17 @@ map("n", "<C-Right>", "<cmd>vertical resize -2<CR>", {})
 
 -- Terminal
 map("t", "<esc>", function()
-	if vim.bo.filetype ~= "toggleterm" then
-		return "<C-\\><C-n>"
-	else
-		return "<esc>"
-	end
+  if vim.bo.filetype ~= "toggleterm" then
+    return "<C-\\><C-n>"
+  else
+    return "<esc>"
+  end
 end, { expr = true })
 
 map("t", "<C-n>", function()
-	if vim.bo.filetype == "toggleterm" then
-		return "<C-\\><C-n>"
-	end
+  if vim.bo.filetype == "toggleterm" then
+    return "<C-\\><C-n>"
+  end
 end, { expr = true })
 
 -- Neotree
@@ -96,10 +96,10 @@ map("n", "<leader>ca", require("actions-preview").code_actions, {})
 -- Snippets
 local ls = require("luasnip")
 map({ "i", "s" }, "<C-l>", function()
-		ls.expand_or_jump()
+  ls.expand_or_jump()
 end, {})
 map({ "i", "s" }, "<C-h>", function()
-		ls.jump(-1)
+  ls.jump(-1)
 end, {})
 
 -- Quit
