@@ -21,9 +21,8 @@ return {
 			},
 		})
 
-    local project = require("project_nvim")
 		function Lazygit_toggle()
-      lazygit.dir = project.get_last_project()
+      lazygit.dir = vim.fn.getcwd()
 			lazygit:toggle()
 		end
 	end,
