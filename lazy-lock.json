@@ -3,7 +3,7 @@
   "actions-preview.nvim": { "branch": "master", "commit": "9f52a01c374318e91337697ebed51c6fae57f8a4" },
   "alpha-nvim": { "branch": "main", "commit": "de72250e054e5e691b9736ee30db72c65d560771" },
   "bufferline.nvim": { "branch": "main", "commit": "261a72b90d6db4ed8014f7bda976bcdc9dd7ce76" },
-  "capsoff.nvim": { "branch": "main", "commit": "51644fcb05f7c30026c363a15a8d8e02d4826313" },
+  "capsoff.nvim": { "branch": "main", "commit": "06bbe0af238997f98ee3346411f842c750293fb9" },
   "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "99290b3ec1322070bcfb9e846450a46f6efa50f0" },
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
