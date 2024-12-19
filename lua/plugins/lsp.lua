@@ -37,6 +37,7 @@ return {
           "ts_ls",
           "eslint",
           "clangd",
+          "svelte",
         },
       })
     end,
@@ -169,6 +170,9 @@ return {
         capabilities = capabilities,
       })
       lspconfig.svelte.setup({
+        capabilities = capabilities,
+      })
+      lspconfig.html.setup({
         capabilities = capabilities,
       })
     end,
