@@ -75,7 +75,7 @@ map("n", "gd", builtin.lsp_definitions, {})
 map("n", "gI", builtin.lsp_implementations, {})
 map("n", "gr", builtin.lsp_references, {})
 map("n", "gt", builtin.lsp_type_definitions, {})
-map("n", "<leader>fn", "<cmd>Telescope notify<CR>", {})
+map("n", "<leader>fm", "<cmd>Telescope notify<CR>", {})
 map("n", "<leader>yh", "<cmd>Telescope yank_history<CR>", {})
 map("n", "<leader>fp", "<cmd>Telescope projects<CR>", {})
 
