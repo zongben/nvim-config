@@ -77,7 +77,7 @@ map("n", "gr", builtin.lsp_references, {})
 map("n", "gt", builtin.lsp_type_definitions, {})
 map("n", "<leader>fm", "<cmd>Telescope notify<CR>", {})
 map("n", "<leader>yh", "<cmd>Telescope yank_history<CR>", {})
-map("n", "<leader>fp", "<cmd>Telescope projects<CR>", {})
+map("n", "<leader>fp", "<cmd>Telescope projects theme=dropdown<CR>", {})
 
 -- Copilot
 map("i", "<C-j>", 'copilot#Accept("\\<CR>")', { expr = true, script = true, replace_keycodes = false })
