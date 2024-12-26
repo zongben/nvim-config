@@ -70,14 +70,7 @@ return {
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       local lspconfig = require("lspconfig")
       local utils = require("utils")
-
-      local packagePath = ""
-      local os_name = utils.get_os()
-      if os_name == "Windows" then
-        packagePath = utils.combined_path(os.getenv("LOCALAPPDATA"), "nvim-data", "mason", "packages")
-      else
-        packagePath = utils.combined_path(os.getenv("HOME"), ".local", "share", "nvim", "mason", "packages")
-      end
+      local package_path = utils.packages_path
 
       lspconfig.lua_ls.setup({
         capabilities = capabilities,
@@ -89,7 +82,7 @@ return {
         capabilities = capabilities,
         cmd = {
           "dotnet",
-          utils.combined_path(packagePath, "omnisharp", "libexec", "OmniSharp.dll"),
+          utils.combined_path(package_path, "omnisharp", "libexec", "OmniSharp.dll"),
         },
         settings = {
           FormattingOptions = {
