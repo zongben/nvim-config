@@ -39,7 +39,7 @@ return {
         dashboard.button("n", "  New file", ":ene<CR>"),
         dashboard.button("g", "  Search", ":Telescop live_grep<CR>"),
         dashboard.button("r", "  Recent Files", ":Telescope oldfiles<CR>"),
-        dashboard.button("p", "  Projects", ":Telescope projects<CR>"),
+        dashboard.button("p", "  Projects", ":Telescope projects theme=dropdown<CR>"),
         dashboard.button("q", "󰅚  Quit", ":qa<CR>"),
       },
       opts = {
