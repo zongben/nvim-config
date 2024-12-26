@@ -1,9 +1,9 @@
 local function map(mode, lhs, rhs, opts)
-  local options = { noremap = true, silent = true }
-  if opts then
-    options = vim.tbl_extend("force", options, opts)
-  end
-  vim.keymap.set(mode, lhs, rhs, options)
+	local options = { noremap = true, silent = true }
+	if opts then
+		options = vim.tbl_extend("force", options, opts)
+	end
+	vim.keymap.set(mode, lhs, rhs, options)
 end
 
 -- General
@@ -28,17 +28,17 @@ map("n", "<C-Right>", "<cmd>vertical resize -2<CR>", {})
 
 -- Terminal
 map("t", "<esc>", function()
-  if vim.bo.filetype ~= "toggleterm" then
-    return "<C-\\><C-n>"
-  else
-    return "<esc>"
-  end
+	if vim.bo.filetype ~= "toggleterm" then
+		return "<C-\\><C-n>"
+	else
+		return "<esc>"
+	end
 end, { expr = true })
 
 map("t", "<C-n>", function()
-  if vim.bo.filetype == "toggleterm" then
-    return "<C-\\><C-n>"
-  end
+	if vim.bo.filetype == "toggleterm" then
+		return "<C-\\><C-n>"
+	end
 end, { expr = true })
 
 -- Neotree
@@ -86,20 +86,17 @@ map("i", "<C-j>", 'copilot#Accept("\\<CR>")', { expr = true, script = true, repl
 map("n", "<leader>ms", "<cmd>Mason<CR>", {})
 
 -- LSP
-map("n", "K", vim.lsp.buf.hover, {})
 map("n", "<leader>rn", vim.lsp.buf.rename, {})
 map("n", "<leader>cf", vim.lsp.buf.format, {})
 map("n", "<leader>ca", require("actions-preview").code_actions, {})
--- map("n", "gD", vim.lsp.buf.declaration, {})
--- map("n", "<C-k>", vim.lsp.buf.signature_help, {})
 
 -- Snippets
 local ls = require("luasnip")
 map({ "i", "s" }, "<C-l>", function()
-  ls.expand_or_jump()
+	ls.expand_or_jump()
 end, {})
 map({ "i", "s" }, "<C-h>", function()
-  ls.jump(-1)
+	ls.jump(-1)
 end, {})
 
 -- Quit
