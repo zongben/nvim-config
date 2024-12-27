@@ -86,7 +86,7 @@ map("i", "<C-j>", 'copilot#Accept("\\<CR>")', { expr = true, script = true, repl
 map("n", "<leader>ms", "<cmd>Mason<CR>", {})
 
 -- LSP
-map("n", "K", vim.lsp.buf.hover, {})
+-- map("n", "K", vim.lsp.buf.hover, {})
 map("n", "<leader>rn", vim.lsp.buf.rename, {})
 map("n", "<leader>cf", vim.lsp.buf.format, {})
 map("n", "<leader>ca", require("actions-preview").code_actions, {})
