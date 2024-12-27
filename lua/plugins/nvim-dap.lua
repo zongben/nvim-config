@@ -6,6 +6,13 @@ return {
       local utils = require("utils")
       local packages_path = utils.packages_path
 
+      local netcoredbg_path = ""
+      if utils.get_os() == "Windows" then
+        netcoredbg_path = utils.combined_path(packages_path, "netcoredbg", "netcoredbg", "netcoredbg.exe")
+      else
+        netcoredbg_path = utils.combined_path(packages_path, "netcoredbg", "netcoredbg")
+      end
+
       vim.api.nvim_set_hl(0, 'DapBreakpoint', { ctermbg = 0, fg = '#CE0000', bg = '' })
       vim.api.nvim_set_hl(0, 'DapLogPoint', { ctermbg = 0, fg = '#61afef', bg = '' })
       vim.api.nvim_set_hl(0, 'DapStopped', { ctermbg = 0, fg = '#98c379', bg = '' })
@@ -25,7 +32,7 @@ return {
 
       dap.adapters.coreclr = {
         type = "executable",
-        command = utils.combined_path(packages_path, "netcoredbg", "netcoredbg"),
+        command = netcoredbg_path,
         args = { "--interpreter=vscode" },
       }
 
