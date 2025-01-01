@@ -5,7 +5,7 @@ return {
       "saadparwaiz1/cmp_luasnip",
     },
     version = "v2.*",
-    build = function ()
+    build = function()
       local utils = require("utils")
       local os_name = utils.get_os()
       if os_name == "Windows" then
@@ -13,7 +13,7 @@ return {
       else
         return "make install_jsregexp"
       end
-    end
+    end,
   },
   {
     "hrsh7th/nvim-cmp",
@@ -43,6 +43,7 @@ return {
           { name = "luasnip" },
           { name = "path" },
           { name = "buffer" },
+          { name = "lazydev", group_index = 0 },
         },
         snippet = {
           expand = function(args)
