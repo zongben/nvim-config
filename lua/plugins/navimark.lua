@@ -1,6 +1,8 @@
 return {
   "zongben/navimark.nvim",
   config = function()
-    require("navimark").setup()
+    require("navimark").setup({
+      persist = true,
+    })
   end,
 }
