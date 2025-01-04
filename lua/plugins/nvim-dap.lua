@@ -14,22 +14,13 @@ return {
         netcoredbg_path = utils.combined_path(packages_path, "netcoredbg", "netcoredbg")
       end
 
-      vim.api.nvim_set_hl(0, 'DapBreakpoint', { ctermbg = 0, fg = '#CE0000', bg = '' })
-      vim.api.nvim_set_hl(0, 'DapLogPoint', { ctermbg = 0, fg = '#61afef', bg = '' })
-      vim.api.nvim_set_hl(0, 'DapStopped', { ctermbg = 0, fg = '#98c379', bg = '' })
+      vim.api.nvim_set_hl(0, "DapBreakpoint", { ctermbg = 0, fg = "#CE0000", bg = "" })
+      vim.api.nvim_set_hl(0, "DapLogPoint", { ctermbg = 0, fg = "#61afef", bg = "" })
+      vim.api.nvim_set_hl(0, "DapStopped", { ctermbg = 0, fg = "#98c379", bg = "" })
 
-      vim.fn.sign_define(
-        "DapBreakpoint",
-        { text = "", texthl = "DapBreakpoint", linehl = "", numhl = "" }
-      )
-      vim.fn.sign_define(
-        "DapLogPoint",
-        { text = "", texthl = "DapLogPoint", linehl = "", numhl = "" }
-      )
-      vim.fn.sign_define(
-        "DapStopped",
-        { text = "", texthl = "DapStopped", linehl = "DapStopped", numhl = "" }
-      )
+      vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DapBreakpoint", linehl = "", numhl = "" })
+      vim.fn.sign_define("DapLogPoint", { text = "", texthl = "DapLogPoint", linehl = "", numhl = "" })
+      vim.fn.sign_define("DapStopped", { text = "", texthl = "DapStopped", linehl = "DapStopped", numhl = "" })
 
       dap.adapters.coreclr = {
         type = "executable",

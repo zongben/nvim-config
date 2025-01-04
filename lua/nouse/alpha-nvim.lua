@@ -64,7 +64,7 @@ return {
         buttons,
         footer,
       },
-      opts = {}
+      opts = {},
     }
 
     vim.api.nvim_create_autocmd("User", {
@@ -82,5 +82,5 @@ return {
     })
 
     alpha.setup(config)
-  end
+  end,
 }

@@ -1,10 +1,11 @@
 return {
-	"windwp/nvim-autopairs",
-	event = "InsertEnter",
-	config = function()
+  "windwp/nvim-autopairs",
+  event = "InsertEnter",
+  lazy = "VeryLazy",
+  config = function()
     require("nvim-autopairs").setup({})
-		local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-		local cmp = require("cmp")
-		cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
-	end,
+    local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+    local cmp = require("cmp")
+    cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+  end,
 }

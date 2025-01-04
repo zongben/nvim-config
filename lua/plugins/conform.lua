@@ -1,5 +1,5 @@
 return {
-  'stevearc/conform.nvim',
+  "stevearc/conform.nvim",
   event = { "BufWritePre" },
   cmd = { "ConformInfo" },
   keys = {
@@ -24,11 +24,11 @@ return {
     default_format_opts = {
       lsp_format = "fallback",
     },
-    format_on_save = function (bufnr)
+    format_on_save = function(bufnr)
       if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
         return false
       end
       return { timeout_ms = 500, lsp_format = "fallback" }
-    end
+    end,
   },
 }

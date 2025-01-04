@@ -19,7 +19,7 @@ return {
         handler = function(_)
           vim.opt_local.relativenumber = true
         end,
-      }
+      },
     },
     filesystem = {
       window = {

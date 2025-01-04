@@ -38,7 +38,10 @@ local js_ts = {
 }
 
 local html = {
-  s("html5", fmt([[
+  s(
+    "html5",
+    fmt(
+      [[
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,7 +53,10 @@ local html = {
 <body>
 </body>
 </html>
-  ]], {})),
+  ]],
+      {}
+    )
+  ),
 }
 
 ls.add_snippets("javascript", js_ts)

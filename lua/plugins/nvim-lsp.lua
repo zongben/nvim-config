@@ -52,7 +52,7 @@ return {
         hint_prefix = {
           above = "↙ ",
           current = "← ",
-          below = "↖ "
+          below = "↖ ",
         },
         always_trigger = true,
         toggle_key = "<M-a>",

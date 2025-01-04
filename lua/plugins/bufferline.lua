@@ -26,7 +26,7 @@ return {
             text = "Trouble",
             text_align = "center",
             separator = true,
-          }
+          },
         },
       },
     },
