@@ -77,7 +77,7 @@ map("n", "gr", builtin.lsp_references, {})
 map("n", "gt", builtin.lsp_type_definitions, {})
 map("n", "<leader>fn", "<cmd>Telescope notify<CR>", {})
 map("n", "<leader>yh", "<cmd>Telescope yank_history<CR>", {})
--- map("n", "<leader>fp", "<cmd>Telescope projects theme=dropdown<CR>", {})
+map("n", "<leader>fp", "<cmd>Telescope projects theme=dropdown<CR>", {})
 
 -- Copilot
 map("i", "<C-j>", 'copilot#Accept("\\<CR>")', { expr = true, script = true, replace_keycodes = false })
@@ -106,6 +106,11 @@ map("n", "<F10>", "<cmd>lua require('dap').step_over()<CR>", {})
 map("n", "<F11>", "<cmd>lua require('dap').step_into()<CR>", {})
 map("n", "<F12>", "<cmd>lua require('dap').step_out()<CR>", {})
 map("n", "<F9>", "<cmd>lua require('dap').toggle_breakpoint()<CR>", {})
+
+-- rip-substitute
+map({"n", "x"}, "<leader>fs", function ()
+  require("rip-substitute").sub()
+end, {})
 
 -- Quit
 map("n", "<leader>qq", "<cmd>qa<cr>", {})
