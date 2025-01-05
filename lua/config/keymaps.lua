@@ -108,7 +108,7 @@ map("n", "<F12>", "<cmd>lua require('dap').step_out()<CR>", {})
 map("n", "<F9>", "<cmd>lua require('dap').toggle_breakpoint()<CR>", {})
 
 -- rip-substitute
-map({"n", "x"}, "<leader>fs", function ()
+map({"n", "x"}, "<leader>fq", function ()
   require("rip-substitute").sub()
 end, {})
 
