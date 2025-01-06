@@ -53,6 +53,7 @@ map("n", "<leader>bd", "<cmd>bd<CR>", {})
 map("n", "<leader>bD", "<cmd>BufferLineCloseOthers<CR>", {})
 map("n", "<leader>bp", "<cmd>BufferLineTogglePin<CR>", {})
 map("n", "<leader>bP", "<cmd>BufferLineGroupClose ungrouped<CR>", {})
+map("n", "<leader>ba", "<cmd>bufdo bd<CR>", {})
 
 -- Git
 map("n", "<leader>gd", "<cmd>DiffviewOpen<CR>", {})
