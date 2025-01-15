@@ -101,13 +101,6 @@ map({ "i", "s" }, "<C-h>", function()
   ls.jump(-1)
 end, {})
 
--- DAP
--- map("n", "<F5>", "<cmd>lua require('dap').continue()<CR>", {})
--- map("n", "<F10>", "<cmd>lua require('dap').step_over()<CR>", {})
--- map("n", "<F11>", "<cmd>lua require('dap').step_into()<CR>", {})
--- map("n", "<F12>", "<cmd>lua require('dap').step_out()<CR>", {})
--- map("n", "<F9>", "<cmd>lua require('dap').toggle_breakpoint()<CR>", {})
-
 -- rip-substitute
 map({"n", "x"}, "<leader>fq", function ()
   require("rip-substitute").sub()

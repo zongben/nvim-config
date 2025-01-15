@@ -34,7 +34,6 @@ return {
           "jsonls",
           "lua_ls",
           "cssls",
-          "rust_analyzer",
           "ts_ls",
           "eslint",
           "clangd",
@@ -149,9 +148,6 @@ return {
         capabilities = capabilities,
       })
       lspconfig.cssls.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.rust_analyzer.setup({
         capabilities = capabilities,
       })
       lspconfig.ts_ls.setup({
