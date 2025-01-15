@@ -12,6 +12,7 @@ return {
   },
   {
     "williamboman/mason.nvim",
+    build = ":MasonUpdate",
     config = function()
       require("mason").setup({
         PATH = "prepend",
@@ -64,7 +65,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     dependencies = {
-      "Hoffs/omnisharp-extended-lsp.nvim",
+      -- "Hoffs/omnisharp-extended-lsp.nvim",
     },
     config = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -122,12 +123,12 @@ return {
             IncludePrereleases = true,
           },
         },
-        handlers = {
-          ["textDocument/definition"] = require("omnisharp_extended").definition_handler,
-          ["textDocument/typeDefinition"] = require("omnisharp_extended").type_definition_handler,
-          ["textDocument/references"] = require("omnisharp_extended").references_handler,
-          ["textDocument/implementation"] = require("omnisharp_extended").implementation_handler,
-        },
+        -- handlers = {
+        --   ["textDocument/definition"] = require("omnisharp_extended").definition_handler,
+        --   ["textDocument/typeDefinition"] = require("omnisharp_extended").type_definition_handler,
+        --   ["textDocument/references"] = require("omnisharp_extended").references_handler,
+        --   ["textDocument/implementation"] = require("omnisharp_extended").implementation_handler,
+        -- },
       })
       lspconfig.tailwindcss.setup({
         capabilities = capabilities,
