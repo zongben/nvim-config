@@ -76,7 +76,7 @@ map("n", "gd", builtin.lsp_definitions, {})
 map("n", "gI", builtin.lsp_implementations, {})
 map("n", "gr", builtin.lsp_references, {})
 map("n", "gt", builtin.lsp_type_definitions, {})
-map("n", "<leader>fn", "<cmd>Telescope notify<CR>", {})
+-- map("n", "<leader>fn", "<cmd>Telescope notify<CR>", {})
 map("n", "<leader>yh", "<cmd>Telescope yank_history<CR>", {})
 map("n", "<leader>fp", "<cmd>Telescope projects theme=dropdown<CR>", {})
 
@@ -102,11 +102,11 @@ map({ "i", "s" }, "<C-h>", function()
 end, {})
 
 -- DAP
-map("n", "<F5>", "<cmd>lua require('dap').continue()<CR>", {})
-map("n", "<F10>", "<cmd>lua require('dap').step_over()<CR>", {})
-map("n", "<F11>", "<cmd>lua require('dap').step_into()<CR>", {})
-map("n", "<F12>", "<cmd>lua require('dap').step_out()<CR>", {})
-map("n", "<F9>", "<cmd>lua require('dap').toggle_breakpoint()<CR>", {})
+-- map("n", "<F5>", "<cmd>lua require('dap').continue()<CR>", {})
+-- map("n", "<F10>", "<cmd>lua require('dap').step_over()<CR>", {})
+-- map("n", "<F11>", "<cmd>lua require('dap').step_into()<CR>", {})
+-- map("n", "<F12>", "<cmd>lua require('dap').step_out()<CR>", {})
+-- map("n", "<F9>", "<cmd>lua require('dap').toggle_breakpoint()<CR>", {})
 
 -- rip-substitute
 map({"n", "x"}, "<leader>fq", function ()
