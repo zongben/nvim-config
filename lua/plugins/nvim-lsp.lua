@@ -162,6 +162,9 @@ return {
       lspconfig.html.setup({
         capabilities = capabilities,
       })
+      lspconfig.rust_analyzer.setup({
+        capabilities = capabilities,
+      })
     end,
   },
 }
