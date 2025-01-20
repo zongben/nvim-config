@@ -20,7 +20,6 @@ return {
       go = { "goimports" },
       cs = { "csharpier" },
       xml = { "xmlformatter" },
-      rs = { "ast-grep" },
     },
     default_format_opts = {
       lsp_format = "fallback",
