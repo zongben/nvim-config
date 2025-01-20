@@ -38,7 +38,7 @@ return {
           "eslint",
           "clangd",
           "svelte",
-          "rust-analyzer",
+          "rust_analyzer",
         },
       })
     end,
