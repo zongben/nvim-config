@@ -79,6 +79,12 @@ map("n", "gt", builtin.lsp_type_definitions, {})
 map("n", "<leader>fn", "<cmd>Telescope notify<CR>", {})
 map("n", "<leader>yh", "<cmd>Telescope yank_history<CR>", {})
 map("n", "<leader>fp", "<cmd>Proot<CR>", {})
+map("n", "<leader>fd", function ()
+  local diagnostic = require("tiny-inline-diagnostic").get_diagnostic_under_cursor()
+  for _, d in ipairs(diagnostic) do
+    vim.notify(d.message)
+  end
+end, {})
 
 -- Copilot
 map("i", "<C-j>", 'copilot#Accept("\\<CR>")', { expr = true, script = true, replace_keycodes = false })
