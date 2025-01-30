@@ -32,6 +32,9 @@ For linux
 ```bash
 # bash
 git clone https://github.com/zongben/nvim-config.git ~/.config/nvim
+# or
+git clone https://github.com/zongben/nvim-config.git ~/github/nvim
+ln -s ~/github/nvim ~/.config/nvim
 ```
 
 For windows
