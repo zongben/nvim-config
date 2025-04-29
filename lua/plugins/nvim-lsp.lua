@@ -39,6 +39,7 @@ return {
           "clangd",
           "svelte",
           "rust_analyzer",
+          "prismals",
         },
       })
     end,
@@ -164,6 +165,9 @@ return {
         capabilities = capabilities,
       })
       lspconfig.rust_analyzer.setup({
+        capabilities = capabilities,
+      })
+      lspconfig.prismals.setup({
         capabilities = capabilities,
       })
     end,
