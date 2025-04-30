@@ -79,7 +79,7 @@ map("n", "gt", builtin.lsp_type_definitions, {})
 map("n", "<leader>fn", "<cmd>Telescope notify<CR>", {})
 map("n", "<leader>yh", "<cmd>Telescope yank_history<CR>", {})
 map("n", "<leader>fp", "<cmd>Proot<CR>", {})
-map("n", "<leader>fd", function ()
+map("n", "<leader>fd", function()
   local diagnostic = require("tiny-inline-diagnostic").get_diagnostic_under_cursor()
   for _, d in ipairs(diagnostic) do
     vim.notify(d.message)
@@ -87,7 +87,10 @@ map("n", "<leader>fd", function ()
 end, {})
 
 -- Copilot
-map("i", "<C-j>", 'copilot#Accept("\\<CR>")', { expr = true, script = true, replace_keycodes = false })
+vim.keymap.set("i", "<C-J>", 'copilot#Accept("\\<CR>")', {
+  expr = true,
+  replace_keycodes = false,
+})
 
 -- Mason
 map("n", "<leader>ms", "<cmd>Mason<CR>", {})
@@ -108,7 +111,7 @@ map({ "i", "s" }, "<C-h>", function()
 end, {})
 
 -- rip-substitute
-map({"n", "x"}, "<leader>fq", function ()
+map({ "n", "x" }, "<leader>fq", function()
   require("rip-substitute").sub()
 end, {})
 
