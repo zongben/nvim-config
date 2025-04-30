@@ -30,7 +30,7 @@ vim.opt.shortmess:append("I")
 
 vim.diagnostic.config({ virtual_text = false })
 
-if utils.get_os() == "win32" then
+if utils.get_os() == "Windows" then
   vim.api.nvim_create_autocmd("BufReadPost", {
     pattern = "*",
     callback = function()
