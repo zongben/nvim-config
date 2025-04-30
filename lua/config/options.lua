@@ -1,3 +1,5 @@
+local utils = require("utils")
+
 vim.g.mapleader = " "
 vim.g.copilot_no_tab_map = true
 vim.g.disable_autoformat = true
@@ -27,3 +29,12 @@ vim.opt.shiftwidth = 2
 vim.opt.shortmess:append("I")
 
 vim.diagnostic.config({ virtual_text = false })
+
+if utils.get_os() == "win32" then
+  vim.api.nvim_create_autocmd("BufReadPost", {
+    pattern = "*",
+    callback = function()
+      vim.bo.fileformat = "unix"
+    end,
+  })
+end
