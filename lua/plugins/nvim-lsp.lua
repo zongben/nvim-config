@@ -40,6 +40,7 @@ return {
           "svelte",
           "rust_analyzer",
           "prismals",
+          "sqls",
         },
       })
     end,
@@ -168,6 +169,9 @@ return {
         capabilities = capabilities,
       })
       lspconfig.prismals.setup({
+        capabilities = capabilities,
+      })
+      lspconfig.sqls.setup({
         capabilities = capabilities,
       })
     end,
