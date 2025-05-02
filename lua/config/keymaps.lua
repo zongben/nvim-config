@@ -111,7 +111,7 @@ map({ "i", "s" }, "<C-h>", function()
 end, {})
 
 -- rip-substitute
-map({ "n", "x" }, "<leader>fq", function()
+map({ "n", "x" }, "<leader>qf", function()
   require("rip-substitute").sub()
 end, {})
 
