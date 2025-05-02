@@ -4,6 +4,10 @@ return {
   opts = {
     options = {
       theme = "auto",
+      disabled_filetypes = {
+        "neo-tree",
+        "trouble",
+      },
     },
     sections = {
       lualine_c = {
