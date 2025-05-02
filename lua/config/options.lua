@@ -1,6 +1,8 @@
 local utils = require("utils")
 
 vim.g.mapleader = " "
+
+--Copilot
 vim.g.copilot_no_tab_map = true
 vim.g.disable_autoformat = true
 
@@ -34,7 +36,9 @@ if utils.get_os() == "Windows" then
   vim.api.nvim_create_autocmd("BufReadPost", {
     pattern = "*",
     callback = function()
-      vim.bo.fileformat = "unix"
+      if vim.bo.modifiable then
+        vim.bo.fileformat = "unix"
+      end
     end,
   })
 end

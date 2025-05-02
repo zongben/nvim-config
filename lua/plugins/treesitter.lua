@@ -3,26 +3,9 @@ return {
   build = ":TSUpdate",
   config = function()
     local configs = require("nvim-treesitter.configs")
----@diagnostic disable-next-line: missing-fields
+    ---@diagnostic disable-next-line: missing-fields
     configs.setup({
       auto_install = true,
-      -- ensure_installed = {
-      --   "bash",
-      --   "lua",
-      --   "c_sharp",
-      --   "css",
-      --   "dockerfile",
-      --   "git_config",
-      --   "git_rebase",
-      --   "gitignore",
-      --   "go",
-      --   "html",
-      --   "javascript",
-      --   "json",
-      --   "rust",
-      --   "scss",
-      --   "svelte",
-      -- },
       sync_install = false,
       highlight = {
         enable = true,
