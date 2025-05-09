@@ -3,14 +3,14 @@ return {
     "akinsho/toggleterm.nvim",
     version = "*",
     config = function()
-      require("toggleterm").setup({
-        open_mapping = [[<C-\>]],
-        direction = "float",
-        start_in_insert = true,
-        float_opts = {
-          border = "curved",
-        },
-      })
+      -- require("toggleterm").setup({
+      --   open_mapping = [[<C-\>]],
+      --   direction = "float",
+      --   start_in_insert = true,
+      --   float_opts = {
+      --     border = "curved",
+      --   },
+      -- })
 
       local Terminal = require("toggleterm.terminal").Terminal
       local lazygit = Terminal:new({

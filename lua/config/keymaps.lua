@@ -23,19 +23,19 @@ map("n", "<C-Left>", "<cmd>vertical resize +2<CR>", {})
 map("n", "<C-Right>", "<cmd>vertical resize -2<CR>", {})
 
 -- Terminal
-map("t", "<esc>", function()
-  if vim.bo.filetype ~= "toggleterm" then
-    return "<C-\\><C-n>"
-  else
-    return "<esc>"
-  end
-end, { expr = true })
-
-map("t", "<C-n>", function()
-  if vim.bo.filetype == "toggleterm" then
-    return "<C-\\><C-n>"
-  end
-end, { expr = true })
+-- map("t", "<esc>", function()
+--   if vim.bo.filetype ~= "toggleterm" then
+--     return "<C-\\><C-n>"
+--   else
+--     return "<esc>"
+--   end
+-- end, { expr = true })
+--
+-- map("t", "<C-n>", function()
+--   if vim.bo.filetype == "toggleterm" then
+--     return "<C-\\><C-n>"
+--   end
+-- end, { expr = true })
 
 -- Neotree
 map("n", "\\", "<cmd>Neotree reveal<CR>", {})
