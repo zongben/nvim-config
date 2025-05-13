@@ -10,6 +10,9 @@ return {
         float_opts = {
           border = "curved",
         },
+        on_open = function (term)
+          term:send("cd " .. vim.fn.getcwd() .. "&& clear")
+        end
       })
 
       local Terminal = require("toggleterm.terminal").Terminal
@@ -21,7 +24,6 @@ return {
           border = "curved",
         },
       })
-
       function Lazygit_toggle()
         lazygit.dir = vim.fn.getcwd()
         lazygit:toggle()
