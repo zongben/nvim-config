@@ -98,9 +98,6 @@ map("n", "<leader>rn", vim.lsp.buf.rename, {})
 map("n", "<leader>cf", vim.lsp.buf.format, {})
 map("n", "<leader>ca", require("actions-preview").code_actions, {})
 
--- dadbod
-map("n", "<leader>db", "<cmd>DBUIToggle<CR>", {})
-
 -- Snippets
 local ls = require("luasnip")
 map({ "i", "s" }, "<C-l>", function()

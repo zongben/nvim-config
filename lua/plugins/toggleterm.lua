@@ -10,11 +10,6 @@ return {
         float_opts = {
           border = "curved",
         },
-        on_open = function(term)
-          if term.cmd ~= "lazygit" then
-            term:send("cd " .. vim.fn.getcwd() .. "&& clear")
-          end
-        end
       })
 
       local Terminal = require("toggleterm.terminal").Terminal
