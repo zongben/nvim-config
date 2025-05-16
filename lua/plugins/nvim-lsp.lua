@@ -165,9 +165,9 @@ return {
       lspconfig.html.setup({
         capabilities = capabilities,
       })
-      lspconfig.rust_analyzer.setup({
-        capabilities = capabilities,
-      })
+      -- lspconfig.rust_analyzer.setup({
+      --   capabilities = capabilities,
+      -- })
       lspconfig.prismals.setup({
         capabilities = capabilities,
       })
