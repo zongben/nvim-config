@@ -19,7 +19,7 @@ return {
     "hrsh7th/nvim-cmp",
     dependencies = {
       "hrsh7th/cmp-path",
-      "hrsh7th/cmp-buffer",
+      -- "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-nvim-lsp",
     },
     config = function()
@@ -33,7 +33,7 @@ return {
         { name = "nvim_lsp" },
         { name = "luasnip" },
         { name = "path" },
-        { name = "buffer" },
+        -- { name = "buffer" },
       }
 
       if vim.bo.filetype == "lua" then
@@ -54,13 +54,6 @@ return {
           expand = function(args)
             ls.lsp_expand(args.body)
           end,
-        },
-      })
-
-      cmp.setup.filetype({ "sql" }, {
-        sources = {
-          { name = "vim-dadbod-completion" },
-          { name = "buffer" },
         },
       })
 
