@@ -89,6 +89,14 @@ vim.keymap.set("i", "<C-J>", 'copilot#Accept("\\<CR>")', {
   script = true,
 })
 
+-- kulala
+map("n", "<leader>rr", function()
+  require("kulala").run()
+end, {})
+map("n", "<leader>fe", function()
+  require("kulala").set_selected_env()
+end, {})
+
 -- Mason
 map("n", "<leader>ms", "<cmd>Mason<CR>", {})
 
