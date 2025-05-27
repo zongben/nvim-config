@@ -8,7 +8,6 @@ return {
             vim.cmd("TermExec cmd='exit'")
           end
           vim.fn.chdir(path)
-          vim.api.nvim_set_current_dir(path)
           vim.cmd("bufdo bd")
           vim.cmd("LspRestart")
         end,
