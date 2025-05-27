@@ -2,6 +2,11 @@ return {
   "zongben/proot.nvim",
   config = function()
     require("proot").setup({
+      ignore = {
+        lsp = {
+          "kulala"
+        }
+      },
       events = {
         entered = function(path)
           if require("toggleterm.terminal").get(1) then
