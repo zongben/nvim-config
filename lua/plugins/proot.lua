@@ -13,7 +13,6 @@ return {
             vim.cmd("TermExec cmd='exit'")
           end
           vim.cmd("bufdo bd")
-          vim.cmd("LspRestart")
         end,
       },
     })
