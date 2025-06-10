@@ -8,11 +8,19 @@ return {
         }
       },
       events = {
-        entered = function(path)
+        entered = function(_)
           if require("toggleterm.terminal").get(1) then
             vim.cmd("TermExec cmd='exit'")
           end
           vim.cmd("bufdo bd")
+
+          local clients = vim.lsp.get_clients()
+          for _, client in pairs(clients) do
+            if client.name == "copilot" then
+              return
+            end
+            vim.cmd("LspRestart " .. client.name)
+          end
         end,
       },
     })
