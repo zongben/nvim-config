@@ -6,7 +6,7 @@ return {
     {
       "<leader>cf",
       function()
-        require("conform").format({ async = true })
+        require("conform").format({ async = false })
       end,
       mode = "",
       desc = "Format buffer",
@@ -17,9 +17,9 @@ return {
       lua = { "stylua" },
       javascript = { "prettier" },
       typescript = { "prettier" },
-      go = { "goimports" },
+      -- go = { "goimports" },
       cs = { "csharpier" },
-      xml = { "xmlformatter" },
+      -- xml = { "xmlformatter" },
     },
     default_format_opts = {
       lsp_format = "fallback",
