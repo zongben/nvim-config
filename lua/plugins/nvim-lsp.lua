@@ -12,12 +12,7 @@ return {
   },
   {
     "mason-org/mason.nvim",
-    build = ":MasonUpdate",
-    config = function()
-      require("mason").setup({
-        PATH = "prepend",
-      })
-    end,
+    opts = {}
   },
   {
     "williamboman/mason-lspconfig.nvim",
@@ -26,7 +21,8 @@ return {
         automatic_installation = true,
         ensure_installed = {
           "bashls",
-          "omnisharp",
+          -- "omnisharp",
+          "csharp_ls",
           "tailwindcss",
           "docker_compose_language_service",
           "gopls",
@@ -106,9 +102,6 @@ return {
       lspconfig.svelte.setup({
         capabilities = capabilities,
       })
-      -- lspconfig.rust_analyzer.setup({
-      --   capabilities = capabilities,
-      -- })
       lspconfig.prismals.setup({
         capabilities = capabilities,
       })

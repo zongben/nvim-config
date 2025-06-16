@@ -24,14 +24,14 @@ M.combined_path = function(...)
   return path:sub(1, -2)
 end
 
-local packages_path = ""
+local mason_bin_path = ""
 local os_name = M.get_os()
 if os_name == "Windows" then
-  packages_path = M.combined_path(os.getenv("LOCALAPPDATA"), "nvim-data", "mason", "packages")
+  mason_bin_path = M.combined_path(os.getenv("LOCALAPPDATA"), "nvim-data", "mason", "packages")
 else
-  packages_path = M.combined_path(os.getenv("HOME"), ".local", "share", "nvim", "mason", "packages")
+  mason_bin_path = M.combined_path(os.getenv("HOME"), ".local", "share", "nvim", "mason", "bin")
 end
 
-M.packages_path = packages_path
+M.mason_bin_path = mason_bin_path
 
 return M
