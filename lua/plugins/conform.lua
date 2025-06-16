@@ -2,6 +2,16 @@ return {
   "stevearc/conform.nvim",
   event = { "BufReadPre", "BufNewFile" },
   cmd = { "ConformInfo" },
+  keys = {
+    {
+      "<leader>cf",
+      function()
+        require("conform").format()
+      end,
+      mode = "",
+      desc = "Format buffer",
+    },
+  },
   config = function()
     require("conform").setup({
       default_format_opts = {
@@ -9,16 +19,6 @@ return {
         lsp_format = "fallback",
         async = false,
         quiet = false,
-      },
-      keys = {
-        {
-          "<leader>cf",
-          function()
-            require("conform").format()
-          end,
-          mode = "",
-          desc = "Format buffer",
-        },
       },
       formatters_by_ft = {
         lua = { "stylua" },
