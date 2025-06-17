@@ -4,8 +4,8 @@ return {
     require("proot").setup({
       ignore = {
         lsp = {
-          "kulala"
-        }
+          "kulala",
+        },
       },
       events = {
         entered = function(_)
@@ -16,10 +16,9 @@ return {
 
           local clients = vim.lsp.get_clients()
           for _, client in pairs(clients) do
-            if client.name == "copilot" then
-              return
+            if client.name ~= "copilot" then
+              vim.cmd("LspRestart " .. client.name)
             end
-            vim.cmd("LspRestart " .. client.name)
           end
         end,
       },
