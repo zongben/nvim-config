@@ -93,7 +93,7 @@ vim.keymap.set("i", "<C-j>", 'copilot#Accept("\\<CR>")', {
 map("n", "<leader>rr", function()
   require("kulala").run()
 end, {})
-map("n", "<leader>fe", function()
+map("n", "<leader>re", function()
   require("kulala").set_selected_env()
 end, {})
 
@@ -101,9 +101,8 @@ end, {})
 map("n", "<leader>ms", "<cmd>Mason<CR>", {})
 
 -- LSP
--- map("n", "K", vim.lsp.buf.hover, {})
+map("n", "K", require("pretty_hover").hover, {})
 map("n", "<leader>rn", vim.lsp.buf.rename, {})
-map("n", "<leader>cf", vim.lsp.buf.format, {})
 map("n", "<leader>ca", require("actions-preview").code_actions, {})
 
 -- Snippets
