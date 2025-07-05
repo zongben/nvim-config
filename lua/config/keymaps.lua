@@ -83,11 +83,11 @@ map("n", "<leader>fd", function()
 end, {})
 
 -- Copilot
-vim.keymap.set("i", "<C-j>", 'copilot#Accept("\\<CR>")', {
-  expr = true,
-  replace_keycodes = false,
-  script = true,
-})
+-- vim.keymap.set("i", "<C-j>", 'copilot#Accept("\\<CR>")', {
+--   expr = true,
+--   replace_keycodes = false,
+--   script = true,
+-- })
 
 -- kulala
 map("n", "<leader>rr", function()
