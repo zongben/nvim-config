@@ -12,13 +12,11 @@ return {
           if require("toggleterm.terminal").get(1) then
             vim.cmd("TermExec cmd='exit'")
           end
+
           vim.cmd("bufdo bd")
 
-          local clients = vim.lsp.get_clients()
-          for _, client in pairs(clients) do
-            if client.name ~= "copilot" then
-              vim.lsp.stop_client(client)
-            end
+          if #vim.lsp.get_clients() > 0 then
+            vim.lsp.client:stop()
           end
         end,
       },
