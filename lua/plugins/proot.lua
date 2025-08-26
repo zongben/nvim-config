@@ -15,8 +15,8 @@ return {
 
           vim.cmd("bufdo bd")
 
-          if #vim.lsp.get_clients() > 0 then
-            vim.lsp.client:stop()
+          for _, client in pairs(vim.lsp.get_clients()) do
+            vim.lsp.stop_client(client)
           end
         end,
       },
