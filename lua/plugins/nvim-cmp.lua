@@ -1,21 +1,5 @@
 return {
   {
-    "L3MON4D3/LuaSnip",
-    dependencies = {
-      "saadparwaiz1/cmp_luasnip",
-    },
-    version = "v2.*",
-    build = function()
-      local utils = require("utils")
-      local os_name = utils.get_os()
-      if os_name == "Windows" then
-        return "make install_jsregexp CC=gcc.exe SHELL=C:\\Program Files\\Git\\bin\\sh.exe .SHELLFLAGS=-c"
-      else
-        return "make install_jsregexp"
-      end
-    end,
-  },
-  {
     "hrsh7th/nvim-cmp",
     dependencies = {
       "hrsh7th/cmp-path",
@@ -23,15 +7,8 @@ return {
       "hrsh7th/cmp-nvim-lsp",
     },
     config = function()
-      local ls = require("luasnip")
-      ls.config.set_config({
-        history = false,
-        updateevents = "TextChanged,TextChangedI",
-      })
-
       local sources = {
         { name = "nvim_lsp" },
-        { name = "luasnip" },
         { name = "path" },
         -- { name = "buffer" },
       }
@@ -50,16 +27,11 @@ return {
           ["<C-y>"] = cmp.mapping.confirm({ select = true }),
         }),
         sources = sources,
-        snippet = {
-          expand = function(args)
-            ls.lsp_expand(args.body)
-          end,
-        },
       })
 
-      cmp.setup.filetype({ "lua" }, {
-        sources = sources,
-      })
+      -- cmp.setup.filetype({ "lua" }, {
+      --   sources = sources,
+      -- })
     end,
   },
 }

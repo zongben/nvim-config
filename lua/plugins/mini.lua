@@ -26,4 +26,10 @@ return {
       require("mini.ai").setup()
     end,
   },
+  {
+    "echasnovski/mini.pairs",
+    config = function()
+      require("mini.pairs").setup()
+    end,
+  },
 }

@@ -17,10 +17,10 @@ map("n", "<C-h>", "<C-w>h", {})
 map("n", "<C-j>", "<C-w>j", {})
 map("n", "<C-k>", "<C-w>k", {})
 map("n", "<C-l>", "<C-w>l", {})
-map("n", "<C-Up>", "<cmd>resize +2<CR>", {})
-map("n", "<C-Down>", "<cmd>resize -2<CR>", {})
-map("n", "<C-Left>", "<cmd>vertical resize +2<CR>", {})
-map("n", "<C-Right>", "<cmd>vertical resize -2<CR>", {})
+map("n", "<C-Up>", "<cmd>resize +2<cr>", {})
+map("n", "<C-Down>", "<cmd>resize -2<cr>", {})
+map("n", "<C-Left>", "<cmd>vertical resize +2<cr>", {})
+map("n", "<C-Right>", "<cmd>vertical resize -2<cr>", {})
 
 -- Terminal
 map("t", "<esc>", function()
@@ -38,30 +38,30 @@ map("t", "<C-n>", function()
 end, { expr = true })
 
 -- Neotree
-map("n", "\\", "<cmd>Neotree reveal<CR>", {})
+map("n", "\\", "<cmd>Neotree reveal<cr>", {})
 
 -- Bufferline
-map("n", "H", "<cmd>BufferLineCyclePrev<CR>", {})
-map("n", "L", "<cmd>BufferLineCycleNext<CR>", {})
-map("n", "<M-H>", "<cmd>BufferLineMovePrev<CR>", {})
-map("n", "<M-L>", "<cmd>BufferLineMoveNext<CR>", {})
-map("n", "<leader>bd", "<cmd>bd<CR>", {})
-map("n", "<leader>bD", "<cmd>BufferLineCloseOthers<CR>", {})
-map("n", "<leader>bp", "<cmd>BufferLineTogglePin<CR>", {})
-map("n", "<leader>bP", "<cmd>BufferLineGroupClose ungrouped<CR>", {})
-map("n", "<leader>ba", "<cmd>bufdo bd<CR>", {})
+map("n", "H", "<cmd>BufferLineCyclePrev<cr>", {})
+map("n", "L", "<cmd>BufferLineCycleNext<cr>", {})
+map("n", "<M-H>", "<cmd>BufferLineMovePrev<cr>", {})
+map("n", "<M-L>", "<cmd>BufferLineMoveNext<cr>", {})
+map("n", "<leader>bd", "<cmd>bd<cr>", {})
+map("n", "<leader>bD", "<cmd>BufferLineCloseOthers<cr>", {})
+map("n", "<leader>bp", "<cmd>BufferLineTogglePin<cr>", {})
+map("n", "<leader>bP", "<cmd>BufferLineGroupClose ungrouped<cr>", {})
+map("n", "<leader>ba", "<cmd>bufdo bd<cr>", {})
 
 -- Git
-map("n", "<leader>gd", "<cmd>DiffviewOpen<CR>", {})
-map("n", "<leader>gh", "<cmd>DiffviewFileHistory %<CR>", {})
-map("n", "<leader>gH", "<cmd>DiffviewFileHistory<CR>", {})
-map("n", "<leader>gc", "<cmd>DiffviewClose<CR>", {})
+map("n", "<leader>gd", "<cmd>DiffviewOpen<cr>", {})
+map("n", "<leader>gh", "<cmd>DiffviewFileHistory %<cr>", {})
+map("n", "<leader>gH", "<cmd>DiffviewFileHistory<cr>", {})
+map("n", "<leader>gc", "<cmd>DiffviewClose<cr>", {})
 
 -- Lazy
-map("n", "<leader>l", "<cmd>Lazy<CR>", {})
+map("n", "<leader>l", "<cmd>Lazy<cr>", {})
 
 -- Lazygit
-map("n", "<leader>gg", "<cmd>lua Lazygit_toggle()<CR>", {})
+map("n", "<leader>gg", "<cmd>lua Lazygit_toggle()<cr>", {})
 
 -- Telescope
 local builtin = require("telescope.builtin")
@@ -72,9 +72,9 @@ map("n", "gd", builtin.lsp_definitions, {})
 map("n", "gI", builtin.lsp_implementations, {})
 map("n", "gr", builtin.lsp_references, {})
 map("n", "gt", builtin.lsp_type_definitions, {})
-map("n", "<leader>fn", "<cmd>Telescope notify<CR>", {})
-map("n", "<leader>yh", "<cmd>Telescope yank_history<CR>", {})
-map("n", "<leader>fp", "<cmd>Proot<CR>", {})
+map("n", "<leader>fn", "<cmd>Telescope notify<cr>", {})
+map("n", "<leader>yh", "<cmd>Telescope yank_history<cr>", {})
+map("n", "<leader>fp", "<cmd>Proot<cr>", {})
 map("n", "<leader>fd", function()
   local diagnostic = require("tiny-inline-diagnostic").get_diagnostic_under_cursor()
   for _, d in ipairs(diagnostic) do
@@ -83,7 +83,7 @@ map("n", "<leader>fd", function()
 end, {})
 
 -- Copilot
--- vim.keymap.set("i", "<C-j>", 'copilot#Accept("\\<CR>")', {
+-- vim.keymap.set("i", "<C-j>", 'copilot#Accept("\\<cr>")', {
 --   expr = true,
 --   replace_keycodes = false,
 --   script = true,
@@ -98,26 +98,20 @@ map("n", "<leader>re", function()
 end, {})
 
 -- Mason
-map("n", "<leader>ms", "<cmd>Mason<CR>", {})
+map("n", "<leader>ms", "<cmd>Mason<cr>", {})
 
 -- LSP
 map("n", "K", require("pretty_hover").hover, {})
 map("n", "<leader>rn", vim.lsp.buf.rename, {})
 map("n", "<leader>ca", require("actions-preview").code_actions, {})
 
--- Snippets
-local ls = require("luasnip")
-map({ "i", "s" }, "<C-l>", function()
-  ls.expand_or_jump()
-end, {})
-map({ "i", "s" }, "<C-h>", function()
-  ls.jump(-1)
-end, {})
-
 -- rip-substitute
 map({ "n", "x" }, "<leader>qf", function()
   require("rip-substitute").sub()
 end, {})
+
+-- Save
+map("n", "<C-s>", "<cmd>w<cr>", {})
 
 -- Quit
 map("n", "<leader>qq", "<cmd>qa<cr>", {})
