@@ -1,6 +1,5 @@
 return {
   "zongben/proot.nvim",
-  dir = "~/github/proot.nvim",
   config = function()
     require("proot").setup({
       ignore = {
@@ -9,11 +8,16 @@ return {
         },
       },
       events = {
-        -- detected = function (name, path)
-        --   local stack = require("navimark.stack")
-        --   stack.new_stack(name)
-        --   stack.save_root_dir(path)
-        -- end,
+        detected = function(name, path)
+          local stack = require("navimark.stack")
+          for _, s in ipairs(stack.stacks) do
+            if s.root_dir == path then
+              return
+            end
+          end
+
+          stack.new_stack(name, path)
+        end,
         entered = function(_)
           if require("toggleterm.terminal").get(1) then
             vim.cmd("TermExec cmd='exit'")
