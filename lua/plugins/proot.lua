@@ -17,6 +17,7 @@ return {
           end
 
           stack.new_stack(name, path)
+          stack.next_stack()
         end,
         entered = function(_)
           if require("toggleterm.terminal").get(1) then
