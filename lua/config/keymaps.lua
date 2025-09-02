@@ -113,5 +113,8 @@ end, {})
 -- Save
 map("n", "<C-s>", "<cmd>w<cr>", {})
 
+-- Refresh
+map("n", "<leader>br", "<cmd>e<cr>", {})
+
 -- Quit
 map("n", "<leader>qq", "<cmd>qa<cr>", {})
