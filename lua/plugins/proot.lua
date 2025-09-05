@@ -1,4 +1,4 @@
-local auto_load_stack = function(name, path)
+local try_create_stack = function(name, path)
   local stack = require("navimark.stack")
   for _, s in ipairs(stack.stacks) do
     if s.root_dir == path then
@@ -21,7 +21,7 @@ return {
       },
       events = {
         detected = function(name, path)
-          auto_load_stack(name, path)
+          try_create_stack(name, path)
         end,
         entered = function(name, path)
           if require("toggleterm.terminal").get(1) then
@@ -34,7 +34,7 @@ return {
             vim.lsp.stop_client(client)
           end
 
-          auto_load_stack(name, path)
+          try_create_stack(name, path)
         end,
       },
     })
