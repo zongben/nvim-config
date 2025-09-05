@@ -1,3 +1,15 @@
+local auto_load_stack = function(name, path)
+  local stack = require("navimark.stack")
+  for _, s in ipairs(stack.stacks) do
+    if s.root_dir == path then
+      return
+    end
+  end
+
+  stack.new_stack(name, path)
+  stack.next_stack()
+end
+
 return {
   "zongben/proot.nvim",
   config = function()
@@ -9,17 +21,9 @@ return {
       },
       events = {
         detected = function(name, path)
-          local stack = require("navimark.stack")
-          for _, s in ipairs(stack.stacks) do
-            if s.root_dir == path then
-              return
-            end
-          end
-
-          stack.new_stack(name, path)
-          stack.next_stack()
+          auto_load_stack(name, path)
         end,
-        entered = function(_)
+        entered = function(name, path)
           if require("toggleterm.terminal").get(1) then
             vim.cmd("TermExec cmd='exit'")
           end
@@ -29,6 +33,8 @@ return {
           for _, client in pairs(vim.lsp.get_clients()) do
             vim.lsp.stop_client(client)
           end
+
+          auto_load_stack(name, path)
         end,
       },
     })
