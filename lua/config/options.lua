@@ -1,6 +1,4 @@
 vim.g.mapleader = " "
-
---Copilot
 vim.g.copilot_no_tab_map = true
 vim.g.disable_autoformat = true
 
@@ -28,5 +26,6 @@ vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.shortmess:append("I")
 vim.opt.cmdheight = 0
+vim.opt.autoread = true
 
 vim.diagnostic.config({ virtual_text = false })

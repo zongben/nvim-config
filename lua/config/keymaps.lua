@@ -22,21 +22,6 @@ map("n", "<C-Down>", "<cmd>resize -2<cr>", {})
 map("n", "<C-Left>", "<cmd>vertical resize +2<cr>", {})
 map("n", "<C-Right>", "<cmd>vertical resize -2<cr>", {})
 
--- Terminal
-map("t", "<esc>", function()
-  if vim.bo.filetype ~= "toggleterm" then
-    return "<C-\\><C-n>"
-  else
-    return "<esc>"
-  end
-end, { expr = true })
-
-map("t", "<C-n>", function()
-  if vim.bo.filetype == "toggleterm" then
-    return "<C-\\><C-n>"
-  end
-end, { expr = true })
-
 -- Neotree
 map("n", "\\", "<cmd>Neotree reveal<cr>", {})
 
@@ -61,24 +46,27 @@ map("n", "<leader>gc", "<cmd>DiffviewClose<cr>", {})
 map("n", "<leader>l", "<cmd>Lazy<cr>", {})
 
 -- Lazygit
-map("n", "<leader>gg", "<cmd>lua Lazygit_toggle()<cr>", {})
+map("n", "<leader>gg", Lazygit_toggle, {})
 
 -- Telescope
 local builtin = require("telescope.builtin")
 map("n", "<leader>ff", builtin.find_files, {})
 map("n", "<leader>fg", builtin.live_grep, {})
 map("n", "<leader>fb", builtin.buffers, {})
+map("n", "<leader>fs", builtin.lsp_document_symbols, {})
 map("n", "gd", builtin.lsp_definitions, {})
 map("n", "gI", builtin.lsp_implementations, {})
 map("n", "gr", builtin.lsp_references, {})
 map("n", "gt", builtin.lsp_type_definitions, {})
 map("n", "<leader>fn", "<cmd>Telescope notify<cr>", {})
-map("n", "<leader>yh", "<cmd>Telescope yank_history<cr>", {})
 map("n", "<leader>fp", "<cmd>Proot<cr>", {})
-map("n", "<leader>fd", function()
+map("n", "<leader>yh", "<cmd>Telescope yank_history<cr>", {})
+map("n", "/", builtin.current_buffer_fuzzy_find, {})
+map("n", "<leader>yd", function()
   local diagnostic = require("tiny-inline-diagnostic").get_diagnostic_under_cursor()
   for _, d in ipairs(diagnostic) do
-    vim.notify(d.message)
+    vim.fn.setreg("+", d.message)
+    vim.notify("message yanked: " .. d.message)
   end
 end, {})
 
@@ -112,9 +100,7 @@ end, {})
 
 -- Save
 map("n", "<C-s>", "<cmd>w<cr>", {})
-
 -- Refresh
 map("n", "<leader>br", "<cmd>e<cr>", {})
-
 -- Quit
 map("n", "<leader>qq", "<cmd>qa<cr>", {})
