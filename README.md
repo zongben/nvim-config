@@ -16,7 +16,7 @@ sudo pacman -S ripgrep
 
 For linux
 ```bash
-git clone git@github.com:zongben/nvim-config.git ~/github
+git clone git@github.com:zongben/nvim-config.git ~/github/nvim-config
 ln -s ~/github/nvim-config ~/.config/nvim
 ```
 
