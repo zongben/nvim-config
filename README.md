@@ -2,31 +2,17 @@
 
 ## Installation
 
-### Remove existing configuration
+install dependencies
 
-For linux
-```bash
-# bash
-# required
-mv ~/.config/nvim{,.bak}
+```sh
+# rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-# optional but recommended
-mv ~/.local/share/nvim{,.bak}
-mv ~/.local/state/nvim{,.bak}
-mv ~/.cache/nvim{,.bak}
+# ripgrep
+sudo pacman -Syu ripgrep
 ```
 
-For windows
-```powershell
-# powershell
-# required
-Move-Item $env:LOCALAPPDATA\nvim $env:LOCALAPPDATA\nvim.bak
-
-# optional but recommended
-Move-Item $env:LOCALAPPDATA\nvim-data $env:LOCALAPPDATA\nvim-data.bak
-```
-
-### Clone repository
+## Clone repository
 
 For linux
 ```bash
