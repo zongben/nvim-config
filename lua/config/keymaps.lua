@@ -36,12 +36,6 @@ map("n", "<leader>bp", "<cmd>BufferLineTogglePin<cr>", {})
 map("n", "<leader>bP", "<cmd>BufferLineGroupClose ungrouped<cr>", {})
 map("n", "<leader>ba", "<cmd>bufdo bd<cr>", {})
 
--- Git
-map("n", "<leader>gd", "<cmd>DiffviewOpen<cr>", {})
-map("n", "<leader>gh", "<cmd>DiffviewFileHistory %<cr>", {})
-map("n", "<leader>gH", "<cmd>DiffviewFileHistory<cr>", {})
-map("n", "<leader>gc", "<cmd>DiffviewClose<cr>", {})
-
 -- Lazy
 map("n", "<leader>l", "<cmd>Lazy<cr>", {})
 
