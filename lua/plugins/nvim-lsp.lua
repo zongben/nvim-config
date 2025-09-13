@@ -11,6 +11,12 @@ return {
     },
   },
   {
+    "Decodetalkers/csharpls-extended-lsp.nvim",
+    config = function()
+      require("telescope").load_extension("csharpls_definition")
+    end,
+  },
+  {
     "mason-org/mason.nvim",
     opts = {},
   },
@@ -53,7 +59,7 @@ return {
     -- use a release tag to download pre-built binaries
     version = "1.*",
     -- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
-    -- build = 'cargo build --release',
+    build = "cargo build --release",
     -- If you use nix, you can build from source using latest nightly rust with:
     -- build = 'nix run .#build-plugin',
 
@@ -79,7 +85,11 @@ return {
         ["<C-e>"] = {
           function(cmp)
             if cmp.is_menu_visible() then
-              cmp.hide()
+              if cmp.is_documentation_visible() then
+                cmp.hide_documentation()
+              else
+                cmp.show_documentation()
+              end
             else
               cmp.show()
             end

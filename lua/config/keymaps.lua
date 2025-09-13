@@ -54,7 +54,13 @@ map("n", "<leader>ff", builtin.find_files, {})
 map("n", "<leader>fg", builtin.live_grep, {})
 map("n", "<leader>fb", builtin.buffers, {})
 map("n", "<leader>fs", builtin.lsp_document_symbols, {})
-map("n", "gd", builtin.lsp_definitions, {})
+map("n", "gd", function()
+  if vim.bo.filetype == "cs" then
+    vim.cmd("Telescope csharpls_definition")
+  else
+    builtin.lsp_definitions()
+  end
+end, {})
 map("n", "gI", builtin.lsp_implementations, {})
 map("n", "gr", builtin.lsp_references, {})
 map("n", "gt", builtin.lsp_type_definitions, {})
