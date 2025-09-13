@@ -9,7 +9,7 @@ install dependencies
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # ripgrep
-sudo pacman -Syu ripgrep
+sudo pacman -S ripgrep
 ```
 
 ## Clone repository
