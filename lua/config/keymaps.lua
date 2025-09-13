@@ -85,10 +85,14 @@ end, {})
 
 -- kulala
 map("n", "<leader>rr", function()
-  require("kulala").run()
+  if vim.bo.filetype == "http" or vim.bo.filetype == "rest" then
+    require("kulala").run()
+  end
 end, {})
 map("n", "<leader>re", function()
-  require("kulala").set_selected_env()
+  if vim.bo.filetype == "http" or vim.bo.filetype == "rest" then
+    require("kulala").set_selected_env()
+  end
 end, {})
 
 -- Mason
