@@ -27,7 +27,6 @@ return {
         automatic_installation = true,
         ensure_installed = {
           "bashls",
-          -- "omnisharp",
           "csharp_ls",
           "tailwindcss",
           "docker_compose_language_service",
@@ -38,11 +37,9 @@ return {
           "cssls",
           "ts_ls",
           "eslint",
-          "clangd",
           "svelte",
           "rust_analyzer",
           "prismals",
-          "sqls",
         },
       })
     end,
