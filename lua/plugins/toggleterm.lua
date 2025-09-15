@@ -3,6 +3,15 @@ return {
     "akinsho/toggleterm.nvim",
     version = "*",
     config = function()
+      local uuid
+      local path
+      repeat
+        uuid = require("utils").generate_uuid()
+        path = "/tmp/nvim.sock-" .. uuid
+      ---@diagnostic disable-next-line: undefined-field
+      until not vim.loop.fs_stat(path)
+      vim.fn.serverstart(path)
+
       local Terminal = require("toggleterm.terminal").Terminal
       local lazygit = Terminal:new({
         cmd = "lazygit",
@@ -11,10 +20,16 @@ return {
         float_opts = {
           border = "curved",
         },
+        env = {
+          NVIM_SERVER = path,
+        },
       })
       function Lazygit_toggle()
-        lazygit.dir = vim.fn.getcwd()
         lazygit:toggle()
+        if lazygit:is_open() then
+          lazygit.dir = vim.fn.getcwd()
+          lazygit:set_mode("i")
+        end
       end
     end,
   },
