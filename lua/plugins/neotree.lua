@@ -7,6 +7,9 @@ return {
     "MunifTanjim/nui.nvim",
   },
   opts = {
+    sources = {
+      "filesystem"
+    },
     event_handlers = {
       {
         event = "file_opened",
