@@ -40,6 +40,12 @@ return {
           "svelte",
           "rust_analyzer",
           "prismals",
+          "sqls",
+        },
+        automatic_enable = {
+          exclude = {
+            "sqls",
+          },
         },
       })
     end,
