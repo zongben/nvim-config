@@ -43,6 +43,9 @@ map("n", "<leader>l", "<cmd>Lazy<cr>", {})
 -- Lazygit
 map("n", "<leader>gg", Lazygit_toggle, {})
 
+-- Dbout
+map("n", "<leader>db", "<cmd>Dbout<cr>", {})
+
 -- Telescope
 local builtin = require("telescope.builtin")
 map("n", "<leader>ff", builtin.find_files, {})
