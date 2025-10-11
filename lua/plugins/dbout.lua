@@ -5,8 +5,6 @@ return {
   -- dir = "~/github/dbout.nvim",
   build = "npm install",
   config = function()
-    require("dbout").setup({
-      enable_telescope = false,
-    })
+    require("dbout").setup({})
   end,
 }
