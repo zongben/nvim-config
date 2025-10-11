@@ -11,12 +11,6 @@ return {
     },
   },
   {
-    "Decodetalkers/csharpls-extended-lsp.nvim",
-    config = function()
-      require("telescope").load_extension("csharpls_definition")
-    end,
-  },
-  {
     "mason-org/mason.nvim",
     opts = {},
   },
@@ -29,7 +23,6 @@ return {
           "bashls",
           "csharp_ls",
           "tailwindcss",
-          "docker_compose_language_service",
           "gopls",
           "html",
           "jsonls",

@@ -36,9 +36,10 @@ map("n", "<leader>bD", "<cmd>BufferLineCloseOthers<cr>", {})
 map("n", "<leader>bp", "<cmd>BufferLineTogglePin<cr>", {})
 map("n", "<leader>bP", "<cmd>BufferLineGroupClose ungrouped<cr>", {})
 map("n", "<leader>ba", "<cmd>bufdo bd<cr>", {})
+map("n", "<leader>br", "<cmd>e<cr>", {})
 
 -- Lazy
-map("n", "<leader>l", "<cmd>Lazy<cr>", {})
+map("n", "<leader>ll", "<cmd>Lazy<cr>", {})
 
 -- Lazygit
 map("n", "<leader>gg", Lazygit_toggle, {})
@@ -47,28 +48,44 @@ map("n", "<leader>gg", Lazygit_toggle, {})
 map("n", "<leader>db", "<cmd>Dbout<cr>", {})
 
 -- Telescope
-local builtin = require("telescope.builtin")
-map("n", "<leader>ff", builtin.find_files, {})
-map("n", "<leader>fg", builtin.live_grep, {})
-map("n", "<leader>fb", builtin.buffers, {})
-map("n", "<leader>fs", builtin.lsp_document_symbols, {})
-map("n", "<leader>gs", builtin.git_status, {})
-map("n", "<leader>gc", builtin.git_bcommits, {})
-map("n", "<leader>gC", builtin.git_commits, {})
-map("n", "gd", function()
-  if vim.bo.filetype == "cs" then
-    vim.cmd("Telescope csharpls_definition")
-  else
-    builtin.lsp_definitions()
-  end
-end, {})
-map("n", "gI", builtin.lsp_implementations, {})
-map("n", "gr", builtin.lsp_references, {})
-map("n", "gt", builtin.lsp_type_definitions, {})
-map("n", "<leader>fn", "<cmd>Telescope notify<cr>", {})
-map("n", "<leader>fp", "<cmd>Proot<cr>", {})
-map("n", "<leader>yh", "<cmd>Telescope yank_history<cr>", {})
-map("n", "/", builtin.current_buffer_fuzzy_find, {})
+-- local builtin = require("telescope.builtin")
+-- map("n", "<leader>ff", builtin.find_files, {})
+-- map("n", "<leader>fg", builtin.live_grep, {})
+-- map("n", "<leader>fb", builtin.buffers, {})
+-- map("n", "<leader>fs", builtin.lsp_document_symbols, {})
+-- map("n", "<leader>gs", builtin.git_status, {})
+-- map("n", "<leader>gc", builtin.git_bcommits, {})
+-- map("n", "<leader>gC", builtin.git_commits, {})
+-- map("n", "gd", function()
+--   if vim.bo.filetype == "cs" then
+--     vim.cmd("Telescope csharpls_definition")
+--   else
+--     builtin.lsp_definitions()
+--   end
+-- end, {})
+-- map("n", "gI", builtin.lsp_implementations, {})
+-- map("n", "gr", builtin.lsp_references, {})
+-- map("n", "gt", builtin.lsp_type_definitions, {})
+-- map("n", "<leader>fn", "<cmd>Telescope notify<cr>", {})
+-- map("n", "<leader>yh", "<cmd>Telescope yank_history<cr>", {})
+-- map("n", "/", builtin.current_buffer_fuzzy_find, {})
+
+-- Snacks
+local snacks = require("snacks")
+map("n", "<leader>fn", snacks.picker.notifications, {})
+map("n", "<leader>fp", snacks.picker.projects, {})
+map("n", "<leader>ff", snacks.picker.files, {})
+map("n", "<leader>fg", snacks.picker.grep, {})
+map("n", "<leader>ft", snacks.picker.treesitter, {})
+map("n", "<leader>yh", snacks.picker.cliphist, {})
+map("n", "<leader>gs", snacks.picker.git_status, {})
+map("n", "gd", snacks.picker.lsp_definitions, {})
+map("n", "gI", snacks.picker.lsp_implementations, {})
+map("n", "gr", snacks.picker.lsp_references, {})
+map("n", "gt", snacks.picker.lsp_type_definitions, {})
+map("n", "/", snacks.picker.lines, {})
+
+-- Tiny diagnostic
 map("n", "<leader>yd", function()
   local diagnostic = require("tiny-inline-diagnostic").get_diagnostic_under_cursor()
   for _, d in ipairs(diagnostic) do
@@ -111,7 +128,5 @@ end, {})
 
 -- Save
 map("n", "<C-s>", "<cmd>w<cr>", {})
--- Refresh
-map("n", "<leader>br", "<cmd>e<cr>", {})
 -- Quit
 map("n", "<leader>qq", "<cmd>qa<cr>", {})
