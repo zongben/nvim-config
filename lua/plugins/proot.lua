@@ -1,5 +1,7 @@
 return {
   "zongben/proot.nvim",
+  cmd = "Proot",
+  lazy = "VeryLazy",
   config = function()
     local try_create_stack = function(name, path)
       local stack = require("navimark.stack")
