@@ -1,3 +1,7 @@
+local stopinsert = function()
+  vim.cmd.stopinsert()
+end
+
 return {
   "folke/snacks.nvim",
   priority = 1000,
@@ -17,6 +21,7 @@ return {
       enable = true,
       sources = {
         notifications = {
+          on_show = stopinsert,
           actions = {
             yank_msg = function(_, item)
               vim.fn.setreg(vim.v.register, item.item.msg)
@@ -25,6 +30,7 @@ return {
           confirm = { "yank_msg", "close" },
         },
         projects = {
+          on_show = stopinsert,
           actions = {
             bd = function()
               vim.cmd("bufdo bd")
@@ -36,6 +42,36 @@ return {
             "close",
           },
           patterns = { ".git" },
+        },
+        cliphist = {
+          on_show = stopinsert,
+        },
+        command_history = {
+          on_show = stopinsert,
+        },
+        git_status = {
+          on_show = stopinsert,
+        },
+        lsp_declarations = {
+          on_show = stopinsert,
+        },
+        lsp_definitions = {
+          on_show = stopinsert,
+        },
+        lsp_implementations = {
+          on_show = stopinsert,
+        },
+        lsp_references = {
+          on_show = stopinsert,
+        },
+        lsp_symbols = {
+          on_show = stopinsert,
+        },
+        lsp_type_definitions = {
+          on_show = stopinsert,
+        },
+        select = {
+          on_show = stopinsert,
         },
       },
     },
