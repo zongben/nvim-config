@@ -30,7 +30,6 @@ return {
           confirm = { "yank_msg", "close" },
         },
         projects = {
-          on_show = stopinsert,
           actions = {
             bd = function()
               vim.cmd("bufdo bd")
@@ -71,6 +70,9 @@ return {
           on_show = stopinsert,
         },
         select = {
+          on_show = stopinsert,
+        },
+        dbout = {
           on_show = stopinsert,
         },
       },
