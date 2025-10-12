@@ -1,10 +1,10 @@
 return {
   "zongben/dbout.nvim",
-  -- dir = "~/github/dbout.nvim",
   build = "npm install",
   lazy = "VeryLazy",
   cmd = { "Dbout" },
+  -- dir = "~/github/dbout.nvim",
   config = function()
-    require("dbout").setup({})
+    require("dbout").setup()
   end,
 }
