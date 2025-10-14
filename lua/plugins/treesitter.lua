@@ -10,9 +10,7 @@ return {
       highlight = {
         enable = true,
       },
-      indent = {
-        enable = true,
-      },
+      ignore_install = { "sql" },
     })
   end,
 }
