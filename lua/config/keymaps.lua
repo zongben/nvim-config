@@ -47,33 +47,12 @@ map("n", "<leader>gg", Lazygit_toggle, {})
 -- Dbout
 map("n", "<leader>db", "<cmd>Dbout<cr>", {})
 
--- Telescope
--- local builtin = require("telescope.builtin")
--- map("n", "<leader>ff", builtin.find_files, {})
--- map("n", "<leader>fg", builtin.live_grep, {})
--- map("n", "<leader>fb", builtin.buffers, {})
--- map("n", "<leader>fs", builtin.lsp_document_symbols, {})
--- map("n", "<leader>gs", builtin.git_status, {})
--- map("n", "<leader>gc", builtin.git_bcommits, {})
--- map("n", "<leader>gC", builtin.git_commits, {})
--- map("n", "gd", function()
---   if vim.bo.filetype == "cs" then
---     vim.cmd("Telescope csharpls_definition")
---   else
---     builtin.lsp_definitions()
---   end
--- end, {})
--- map("n", "gI", builtin.lsp_implementations, {})
--- map("n", "gr", builtin.lsp_references, {})
--- map("n", "gt", builtin.lsp_type_definitions, {})
--- map("n", "<leader>fn", "<cmd>Telescope notify<cr>", {})
--- map("n", "<leader>yh", "<cmd>Telescope yank_history<cr>", {})
--- map("n", "/", builtin.current_buffer_fuzzy_find, {})
+--Proot
+map("n", "<leader>fp", "<cmd>Proot<cr>", {})
 
 -- Snacks
 local snacks = require("snacks")
 map("n", "<leader>fn", snacks.picker.notifications, {})
-map("n", "<leader>fp", snacks.picker.projects, {})
 map("n", "<leader>ff", snacks.picker.files, {})
 map("n", "<leader>fg", snacks.picker.grep, {})
 map("n", "<leader>fs", snacks.picker.lsp_symbols, {})
