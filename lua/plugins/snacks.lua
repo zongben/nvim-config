@@ -29,19 +29,6 @@ return {
           },
           confirm = { "yank_msg", "close" },
         },
-        projects = {
-          actions = {
-            bd = function()
-              vim.cmd("bufdo bd")
-            end,
-          },
-          confirm = {
-            "bd",
-            "tcd",
-            "close",
-          },
-          patterns = { ".git" },
-        },
         cliphist = {
           on_show = stopinsert,
         },

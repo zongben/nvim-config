@@ -1,6 +1,5 @@
 return {
   "zongben/proot.nvim",
-  dir = "~/github/proot.nvim",
   config = function()
     require("proot").setup({
       detector = {
@@ -15,6 +14,5 @@ return {
         end,
       },
     })
-    require("telescope").load_extension("proot")
   end,
 }
