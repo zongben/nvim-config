@@ -62,9 +62,6 @@ return {
         dbout = {
           on_show = stopinsert,
         },
-        proot = {
-          on_show = stopinsert,
-        },
       },
     },
     styles = {
