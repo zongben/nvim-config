@@ -1,11 +1,10 @@
 return {
   "lewis6991/gitsigns.nvim",
   config = function()
-    require("gitsigns").setup({
+    local gitsigns = require("gitsigns")
+    local map = require("utils").map
+    gitsigns.setup({
       on_attach = function()
-        local gitsigns = require("gitsigns")
-        local map = require("utils").map
-
         map("n", "]c", function()
           if vim.wo.diff then
             vim.cmd.normal({ "]c", bang = true })
@@ -22,7 +21,7 @@ return {
           end
         end)
 
-        map("n", "<leader>gb", gitsigns.toggle_current_line_blame)
+        map("n", "<leader>gb", gitsigns.blame)
       end,
     })
   end,
