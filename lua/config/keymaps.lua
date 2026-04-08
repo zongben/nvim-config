@@ -2,7 +2,6 @@ local map = require("utils").map
 
 -- General
 map({ "n" }, "s", "<nop>", {})
-map({ "n" }, "n", "<nop>", {})
 
 -- Clear search with <esc>
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", {})
