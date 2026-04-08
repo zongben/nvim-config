@@ -15,6 +15,8 @@ return {
           path = 1,
         },
       },
+      lualine_y = {},
+      lualine_z = {},
     },
   },
 }
