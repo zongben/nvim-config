@@ -27,7 +27,7 @@ return {
         },
       })
 
-      local function Lazygit_toggle()
+      function Lazygit_toggle()
         if not lazygit:is_open() then
           lazygit.dir = vim.fn.getcwd()
         end
