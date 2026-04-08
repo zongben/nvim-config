@@ -49,15 +49,10 @@ return {
         row = 0,
         col = 1,
       },
-      on_attach = function(bufnr)
+      on_attach = function()
         local gitsigns = require("gitsigns")
 
-        local function map(mode, l, r, opts)
-          opts = opts or {}
-          opts.buffer = bufnr
-          vim.keymap.set(mode, l, r, opts)
-        end
-
+        local map = require("utils").map
         map("n", "]c", function()
           if vim.wo.diff then
             vim.cmd.normal({ "]c", bang = true })

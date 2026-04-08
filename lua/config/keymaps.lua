@@ -26,7 +26,6 @@ map("n", "<leader>br", "<cmd>e<cr>", {})
 map("n", "<leader>ll", "<cmd>Lazy<cr>", {})
 
 -- LSP
-map("n", "K", require("pretty_hover").hover, {})
 map("n", "<leader>rn", vim.lsp.buf.rename, {})
 map("n", "<leader>ca", vim.lsp.buf.code_action, {})
 
