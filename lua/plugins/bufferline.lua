@@ -38,6 +38,7 @@ return {
         mode = { "n" },
       },
     },
+    lazy = false,
     opts = {
       options = {
         diagnostics = "nvim_lsp",
