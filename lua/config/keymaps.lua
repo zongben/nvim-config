@@ -1,10 +1,5 @@
-local function map(mode, lhs, rhs, opts)
-  local options = { noremap = true, silent = true }
-  if opts then
-    options = vim.tbl_extend("force", options, opts)
-  end
-  vim.keymap.set(mode, lhs, rhs, options)
-end
+local utils = require("utils")
+local map = utils.map
 
 -- General
 map({ "n" }, "s", "<nop>", {})
