@@ -17,6 +17,9 @@ map("n", "<C-Down>", "<cmd>resize -2<cr>", {})
 map("n", "<C-Left>", "<cmd>vertical resize +2<cr>", {})
 map("n", "<C-Right>", "<cmd>vertical resize -2<cr>", {})
 
+-- buffer
+map("n", "<leader>br", "<cmd>e<cr>", {})
+
 -- Lazy
 map("n", "<leader>ll", "<cmd>Lazy<cr>", {})
 
@@ -26,5 +29,6 @@ map("n", "<leader>ca", vim.lsp.buf.code_action, {})
 
 -- Save
 map("n", "<C-s>", "<cmd>w<cr>", {})
+
 -- Quit
 map("n", "<leader>qq", "<cmd>qa<cr>", {})
