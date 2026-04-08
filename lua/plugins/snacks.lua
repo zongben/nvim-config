@@ -59,35 +59,35 @@ return {
         mode = { "n" },
       },
       {
-        "<leader>gd",
+        "gd",
         function()
           snacks.picker.lsp_definitions()
         end,
         mode = { "n" },
       },
       {
-        "<leader>gD",
+        "gD",
         function()
           snacks.picker.lsp_declarations()
         end,
         mode = { "n" },
       },
       {
-        "<leader>gI",
+        "gI",
         function()
           snacks.picker.lsp_implementations()
         end,
         mode = { "n" },
       },
       {
-        "<leader>gr",
+        "gr",
         function()
           snacks.picker.lsp_references()
         end,
         mode = { "n" },
       },
       {
-        "<leader>gt",
+        "gt",
         function()
           snacks.picker.lsp_type_definitions()
         end,
