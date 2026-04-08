@@ -12,6 +12,15 @@ return {
   },
   {
     "mason-org/mason.nvim",
+    keys = {
+      {
+        "<leader>ms",
+        function()
+          vim.cmd("Mason")
+        end,
+        desc = "Mason",
+      },
+    },
     opts = {},
   },
   {
@@ -50,10 +59,10 @@ return {
         settings = {
           Lua = {
             workspace = {
-              library = vim.api.nvim_get_runtime_file("", true)
-            }
-          }
-        }
+              library = vim.api.nvim_get_runtime_file("", true),
+            },
+          },
+        },
       })
     end,
   },

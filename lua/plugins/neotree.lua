@@ -6,6 +6,15 @@ return {
     "nvim-tree/nvim-web-devicons",
     "MunifTanjim/nui.nvim",
   },
+  keys = {
+    {
+      "\\",
+      function()
+        vim.cmd("Neotree reveal")
+      end,
+      mode = "n",
+    },
+  },
   opts = {
     sources = {
       "filesystem",
@@ -75,7 +84,7 @@ return {
       mappings = {
         ["h"] = "close_all_subnodes",
         ["l"] = "open",
-        ["Y"] = "copy_selector"
+        ["Y"] = "copy_selector",
       },
     },
   },

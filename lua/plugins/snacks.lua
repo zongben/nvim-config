@@ -6,6 +6,99 @@ return {
   "folke/snacks.nvim",
   priority = 1000,
   lazy = false,
+  keys = {
+    {
+      "<leader>fn",
+      function()
+        require("snacks").picker.notifications()
+      end,
+      mode = { "n" },
+    },
+    {
+      "<leader>ff",
+      function()
+        require("snacks").picker.files()
+      end,
+      mode = { "n" },
+    },
+    {
+      "<leader>fg",
+      function()
+        require("snacks").picker.grep()
+      end,
+      mode = { "n" },
+    },
+    {
+      "<leader>fs",
+      function()
+        require("snacks").picker.lsp_symbols()
+      end,
+      mode = { "n" },
+    },
+    {
+      "<leader>fc",
+      function()
+        require("snacks").picker.command_history()
+      end,
+      mode = { "n" },
+    },
+    {
+      "<leader>yh",
+      function()
+        require("snacks").picker.cliphist()
+      end,
+      mode = { "n" },
+    },
+    {
+      "<leader>gs",
+      function()
+        require("snacks").picker.git_status()
+      end,
+      mode = { "n" },
+    },
+    {
+      "<leader>gd",
+      function()
+        require("snacks").picker.lsp_definitions()
+      end,
+      mode = { "n" },
+    },
+    {
+      "<leader>gD",
+      function()
+        require("snacks").picker.lsp_declarations()
+      end,
+      mode = { "n" },
+    },
+    {
+      "<leader>gI",
+      function()
+        require("snacks").picker.lsp_implementations()
+      end,
+      mode = { "n" },
+    },
+    {
+      "<leader>gr",
+      function()
+        require("snacks").picker.lsp_references()
+      end,
+      mode = { "n" },
+    },
+    {
+      "<leader>gt",
+      function()
+        require("snacks").picker.lsp_type_definitions()
+      end,
+      mode = { "n" },
+    },
+    {
+      "<leader>/",
+      function()
+        require("snacks").picker.lines()
+      end,
+      mode = { "n" },
+    },
+  },
   opts = {
     indent = {
       enable = true,

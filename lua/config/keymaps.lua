@@ -1,5 +1,4 @@
-local utils = require("utils")
-local map = utils.map
+local map = require("utils").map
 
 -- General
 map({ "n" }, "s", "<nop>", {})
@@ -18,89 +17,18 @@ map("n", "<C-Down>", "<cmd>resize -2<cr>", {})
 map("n", "<C-Left>", "<cmd>vertical resize +2<cr>", {})
 map("n", "<C-Right>", "<cmd>vertical resize -2<cr>", {})
 
--- Neotree
-map("n", "\\", "<cmd>Neotree reveal<cr>", {})
-
--- Bufferline
-map("n", "H", "<cmd>BufferLineCyclePrev<cr>", {})
-map("n", "L", "<cmd>BufferLineCycleNext<cr>", {})
-map("n", "<M-H>", "<cmd>BufferLineMovePrev<cr>", {})
-map("n", "<M-L>", "<cmd>BufferLineMoveNext<cr>", {})
+-- buffer
 map("n", "<leader>bd", "<cmd>bd<cr>", {})
-map("n", "<leader>bD", "<cmd>BufferLineCloseOthers<cr>", {})
-map("n", "<leader>bp", "<cmd>BufferLineTogglePin<cr>", {})
-map("n", "<leader>bP", "<cmd>BufferLineGroupClose ungrouped<cr>", {})
 map("n", "<leader>ba", "<cmd>bufdo bd<cr>", {})
 map("n", "<leader>br", "<cmd>e<cr>", {})
 
 -- Lazy
 map("n", "<leader>ll", "<cmd>Lazy<cr>", {})
 
--- Lazygit
-map("n", "<leader>gg", Lazygit_toggle, {})
-
--- Dbout
-map("n", "<leader>db", "<cmd>Dbout<cr>", {})
-
---Proot
-map("n", "<leader>fp", "<cmd>Proot<cr>", {})
-
--- Snacks
-local snacks = require("snacks")
-map("n", "<leader>fn", snacks.picker.notifications, {})
-map("n", "<leader>ff", snacks.picker.files, {})
-map("n", "<leader>fg", snacks.picker.grep, {})
-map("n", "<leader>fs", snacks.picker.lsp_symbols, {})
-map("n", "<leader>fc", snacks.picker.command_history, {})
-map("n", "<leader>yh", snacks.picker.cliphist, {})
-map("n", "<leader>gs", snacks.picker.git_status, {})
-map("n", "gd", snacks.picker.lsp_definitions, {})
-map("n", "gD", snacks.picker.lsp_declarations, {})
-map("n", "gI", snacks.picker.lsp_implementations, {})
-map("n", "gr", snacks.picker.lsp_references, {})
-map("n", "gt", snacks.picker.lsp_type_definitions, {})
-map("n", "/", snacks.picker.lines, {})
-
--- Tiny diagnostic
-map("n", "<leader>yd", function()
-  local diagnostic = require("tiny-inline-diagnostic").get_diagnostic_under_cursor()
-  for _, d in ipairs(diagnostic) do
-    vim.fn.setreg("+", d.message)
-    vim.notify("message yanked: " .. d.message)
-  end
-end, {})
-
--- Copilot
-vim.keymap.set("i", "<C-j>", 'copilot#Accept("\\<cr>")', {
-  expr = true,
-  replace_keycodes = false,
-  script = true,
-})
-
--- kulala
-map("n", "<leader>rr", function()
-  if vim.bo.filetype == "http" or vim.bo.filetype == "rest" then
-    require("kulala").run()
-  end
-end, {})
-map("n", "<leader>re", function()
-  if vim.bo.filetype == "http" or vim.bo.filetype == "rest" then
-    require("kulala").set_selected_env()
-  end
-end, {})
-
--- Mason
-map("n", "<leader>ms", "<cmd>Mason<cr>", {})
-
 -- LSP
 map("n", "K", require("pretty_hover").hover, {})
 map("n", "<leader>rn", vim.lsp.buf.rename, {})
 map("n", "<leader>ca", vim.lsp.buf.code_action, {})
-
--- rip-substitute
-map({ "n", "x" }, "<leader>qf", function()
-  require("rip-substitute").sub()
-end, {})
 
 -- Save
 map("n", "<C-s>", "<cmd>w<cr>", {})

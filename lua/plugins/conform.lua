@@ -9,8 +9,7 @@ return {
         function()
           require("conform").format()
         end,
-        mode = "",
-        desc = "Format buffer",
+        mode = "n",
       },
     },
     config = function()

@@ -20,14 +20,14 @@ return {
         float_opts = {
           border = "curved",
           width = math.floor(vim.o.columns * 0.98),
-          height = math.floor(vim.o.lines * 0.98)
+          height = math.floor(vim.o.lines * 0.98),
         },
         env = {
           NVIM_SERVER = path,
         },
       })
 
-      function Lazygit_toggle()
+      local function Lazygit_toggle()
         if not lazygit:is_open() then
           lazygit.dir = vim.fn.getcwd()
         end
@@ -36,6 +36,9 @@ return {
           lazygit:set_mode("i")
         end
       end
+
+      local map = require("utils").map
+      map("n", "<leader>gg", Lazygit_toggle, {})
     end,
   },
 }
