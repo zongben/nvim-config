@@ -100,7 +100,7 @@ map("n", "<leader>ms", "<cmd>Mason<cr>", {})
 -- LSP
 map("n", "K", require("pretty_hover").hover, {})
 map("n", "<leader>rn", vim.lsp.buf.rename, {})
-map("n", "<leader>ca", require("actions-preview").code_actions, {})
+map("n", "<leader>ca", vim.lsp.buf.code_action, {})
 
 -- rip-substitute
 map({ "n", "x" }, "<leader>qf", function()
