@@ -6,99 +6,130 @@ return {
   "folke/snacks.nvim",
   priority = 1000,
   lazy = false,
-  keys = {
-    {
-      "<leader>fn",
-      function()
-        require("snacks").picker.notifications()
-      end,
-      mode = { "n" },
-    },
-    {
-      "<leader>ff",
-      function()
-        require("snacks").picker.files()
-      end,
-      mode = { "n" },
-    },
-    {
-      "<leader>fg",
-      function()
-        require("snacks").picker.grep()
-      end,
-      mode = { "n" },
-    },
-    {
-      "<leader>fs",
-      function()
-        require("snacks").picker.lsp_symbols()
-      end,
-      mode = { "n" },
-    },
-    {
-      "<leader>fc",
-      function()
-        require("snacks").picker.command_history()
-      end,
-      mode = { "n" },
-    },
-    {
-      "<leader>yh",
-      function()
-        require("snacks").picker.cliphist()
-      end,
-      mode = { "n" },
-    },
-    {
-      "<leader>gs",
-      function()
-        require("snacks").picker.git_status()
-      end,
-      mode = { "n" },
-    },
-    {
-      "<leader>gd",
-      function()
-        require("snacks").picker.lsp_definitions()
-      end,
-      mode = { "n" },
-    },
-    {
-      "<leader>gD",
-      function()
-        require("snacks").picker.lsp_declarations()
-      end,
-      mode = { "n" },
-    },
-    {
-      "<leader>gI",
-      function()
-        require("snacks").picker.lsp_implementations()
-      end,
-      mode = { "n" },
-    },
-    {
-      "<leader>gr",
-      function()
-        require("snacks").picker.lsp_references()
-      end,
-      mode = { "n" },
-    },
-    {
-      "<leader>gt",
-      function()
-        require("snacks").picker.lsp_type_definitions()
-      end,
-      mode = { "n" },
-    },
-    {
-      "<leader>/",
-      function()
-        require("snacks").picker.lines()
-      end,
-      mode = { "n" },
-    },
-  },
+  keys = function()
+    local snacks = require("snacks")
+    return {
+      {
+        "<leader>fn",
+        function()
+          snacks.picker.notifications()
+        end,
+        mode = { "n" },
+      },
+      {
+        "<leader>ff",
+        function()
+          snacks.picker.files()
+        end,
+        mode = { "n" },
+      },
+      {
+        "<leader>fg",
+        function()
+          snacks.picker.grep()
+        end,
+        mode = { "n" },
+      },
+      {
+        "<leader>fs",
+        function()
+          snacks.picker.lsp_symbols()
+        end,
+        mode = { "n" },
+      },
+      {
+        "<leader>fc",
+        function()
+          snacks.picker.command_history()
+        end,
+        mode = { "n" },
+      },
+      {
+        "<leader>yh",
+        function()
+          snacks.picker.cliphist()
+        end,
+        mode = { "n" },
+      },
+      {
+        "<leader>gs",
+        function()
+          snacks.picker.git_status()
+        end,
+        mode = { "n" },
+      },
+      {
+        "<leader>gd",
+        function()
+          snacks.picker.lsp_definitions()
+        end,
+        mode = { "n" },
+      },
+      {
+        "<leader>gD",
+        function()
+          snacks.picker.lsp_declarations()
+        end,
+        mode = { "n" },
+      },
+      {
+        "<leader>gI",
+        function()
+          snacks.picker.lsp_implementations()
+        end,
+        mode = { "n" },
+      },
+      {
+        "<leader>gr",
+        function()
+          snacks.picker.lsp_references()
+        end,
+        mode = { "n" },
+      },
+      {
+        "<leader>gt",
+        function()
+          snacks.picker.lsp_type_definitions()
+        end,
+        mode = { "n" },
+      },
+      {
+        "<leader>/",
+        function()
+          snacks.picker.lines()
+        end,
+        mode = { "n" },
+      },
+      {
+        "<leader>gg",
+        function()
+          snacks.lazygit()
+        end,
+        mode = { "n" },
+      },
+      {
+        "<leader>bd",
+        function()
+          snacks.bufdelete()
+        end,
+        mode = { "n" },
+      },
+      {
+        "<leader>bD",
+        function()
+          snacks.bufdelete.other()
+        end,
+        mode = { "n" },
+      },
+      {
+        "<leader>ba",
+        function()
+          snacks.bufdelete.all()
+        end,
+        mode = { "n" },
+      }
+    }
+  end,
   opts = {
     indent = {
       enable = true,
@@ -161,6 +192,9 @@ return {
       notification_history = {
         width = 0.8,
         height = 0.8,
+      },
+      lazygit = {
+        border = true,
       },
     },
   },

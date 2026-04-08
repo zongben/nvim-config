@@ -17,11 +17,6 @@ map("n", "<C-Down>", "<cmd>resize -2<cr>", {})
 map("n", "<C-Left>", "<cmd>vertical resize +2<cr>", {})
 map("n", "<C-Right>", "<cmd>vertical resize -2<cr>", {})
 
--- buffer
-map("n", "<leader>bd", "<cmd>bd<cr>", {})
-map("n", "<leader>ba", "<cmd>bufdo bd<cr>", {})
-map("n", "<leader>br", "<cmd>e<cr>", {})
-
 -- Lazy
 map("n", "<leader>ll", "<cmd>Lazy<cr>", {})
 

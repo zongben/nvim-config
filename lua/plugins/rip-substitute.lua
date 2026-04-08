@@ -1,12 +1,16 @@
 return {
   "chrisgrieser/nvim-rip-substitute",
   lazy = "VeryLazy",
+  keys = {
+    {
+      "<leader>qf",
+      function()
+        require("rip-substitute").sub()
+      end,
+      mode = { "n", "x" },
+    },
+  },
   config = function()
     require("rip-substitute").setup()
-
-    local map = require("utils").map
-    map({ "n", "x" }, "<leader>qf", function()
-      require("rip-substitute").sub()
-    end, {})
   end,
 }
