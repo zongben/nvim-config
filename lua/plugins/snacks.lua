@@ -127,7 +127,21 @@ return {
           snacks.bufdelete.all()
         end,
         mode = { "n" },
-      }
+      },
+      {
+        "<leader>fb",
+        function()
+          snacks.picker.buffers()
+        end,
+        mode = { "n" },
+      },
+      {
+        "<leader>ud",
+        function()
+          snacks.picker.undo()
+        end,
+        mode = { "n" },
+      },
     }
   end,
   opts = {
@@ -184,6 +198,12 @@ return {
           on_show = stopinsert,
         },
         dbout = {
+          on_show = stopinsert,
+        },
+        buffers = {
+          on_show = stopinsert,
+        },
+        undo = {
           on_show = stopinsert,
         },
       },
