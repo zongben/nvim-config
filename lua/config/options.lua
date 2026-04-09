@@ -26,5 +26,3 @@ vim.opt.shiftwidth = 2
 vim.opt.shortmess:append("I")
 vim.opt.cmdheight = 0
 vim.opt.autoread = true
-
-vim.diagnostic.config({ virtual_text = false })
