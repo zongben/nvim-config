@@ -1,11 +1,13 @@
 return {
   "rachartier/tiny-inline-diagnostic.nvim",
-  event = "VeryLazy", -- Or `LspAttach`
-  priority = 1000, -- needs to be loaded in first
+  event = "VeryLazy",
+  priority = 1000,
   config = function()
-    require("tiny-inline-diagnostic").setup()
+    vim.diagnostic.config({ virtual_text = false })
 
+    require("tiny-inline-diagnostic").setup()
     local map = require("utils").map
+
     map("n", "<leader>yd", function()
       local diagnostic = require("tiny-inline-diagnostic").get_diagnostic_under_cursor()
       for _, d in ipairs(diagnostic) do
