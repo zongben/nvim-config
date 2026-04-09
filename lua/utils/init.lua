@@ -1,7 +1,5 @@
 local M = {}
 
-M.server_path = ""
-
 M.generate_uuid = function()
   local random = math.random
   local template = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx"
