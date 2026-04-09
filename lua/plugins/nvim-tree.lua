@@ -101,17 +101,19 @@ return {
           git_placement = "right_align",
           glyphs = {
             git = {
-              unstaged = "U",
-              staged = "A",
-              unmerged = "M",
-              renamed = "R",
-              untracked = "?",
-              deleted = "D",
-              ignored = "!",
+              deleted = "✖",
+              renamed = "󰁕",
+              untracked = "✚",
+              ignored = "",
+              unstaged = "",
+              staged = "󰄵",
+              unmerged = "",
             },
           },
         },
       },
     })
+
+    vim.api.nvim_set_hl(0, "NvimTreeGitDirtyIcon", { fg = "#EBCB8B" })
   end,
 }
