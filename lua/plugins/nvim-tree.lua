@@ -53,6 +53,12 @@ return {
         vim.keymap.set("n", "l", edit_or_open, { buffer = bufnr })
         vim.keymap.set("n", "h", api.node.navigate.parent_close, { buffer = bufnr })
       end,
+      update_focused_file = {
+        enable = true,
+        update_root = {
+          enable = false,
+        },
+      },
       view = {
         number = true,
         relativenumber = true,
