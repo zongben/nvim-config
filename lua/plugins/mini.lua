@@ -41,7 +41,12 @@ return {
   {
     "nvim-mini/mini.jump",
     config = function()
-      require("mini.jump").setup()
+      require("mini.jump").setup({
+        delay = {
+          highlight = 100,
+        },
+        silent = true,
+      })
     end,
   },
 }
