@@ -38,4 +38,10 @@ return {
       require("mini.comment").setup()
     end,
   },
+  {
+    "nvim-mini/mini.jump",
+    config = function()
+      require("mini.jump").setup()
+    end,
+  },
 }
