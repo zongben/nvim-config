@@ -2,7 +2,6 @@ local stopinsert = function()
   vim.cmd.stopinsert()
 end
 
--- LSP progress
 vim.api.nvim_create_autocmd("LspProgress", {
   ---@param ev {data: {client_id: integer, params: lsp.ProgressParams}}
   callback = function(ev)
