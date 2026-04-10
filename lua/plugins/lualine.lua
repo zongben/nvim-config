@@ -5,7 +5,6 @@ return {
     options = {
       theme = "auto",
       disabled_filetypes = {
-        "neo-tree",
         "NvimTree",
       },
     },
