@@ -109,13 +109,6 @@ return {
         mode = { "n" },
       },
       {
-        "<leader>/",
-        function()
-          snacks.picker.lines()
-        end,
-        mode = { "n" },
-      },
-      {
         "<leader>gg",
         function()
           snacks.lazygit()
