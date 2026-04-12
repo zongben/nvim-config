@@ -6,7 +6,7 @@ local ts_path = path(config_path, "vendors", "tree-sitters")
 local parser_path = path(config_path, "parser")
 local queries_path = path(config_path, "queries")
 
-local languages = { "lua", "rust", "javascript", "typescript", "csharp", "html", "c", "bash", "css", "xml" }
+local languages = { "lua", "rust", "javascript", "typescript", "csharp", "html", "c", "bash", "css", "xml", "hyprlang" }
 
 local function prepend_line(filepath, line)
   local f = io.open(filepath, "r")
@@ -91,6 +91,12 @@ local build_xml = function()
   vim.fn.system({ "cp", "-r", path(xml_ts_path, "queries", "."), path(queries_path, "xml") })
 end
 
+local build_hyprlang = function()
+  local hyprlang_ts_path = path(ts_path, "hyprlang")
+  vim.fn.system({ cli, "build", hyprlang_ts_path, "-o", path(parser_path, "hyprlang.so") })
+  vim.fn.system({ "cp", "-r", path(hyprlang_ts_path, "queries", "."), path(queries_path, "hyprlang") })
+end
+
 local build_all = function()
   build_javascript()
   build_typescript()
@@ -102,6 +108,7 @@ local build_all = function()
   build_csharp()
   build_css()
   build_xml()
+  build_hyprlang()
 end
 
 vim.api.nvim_create_user_command("TSBuild", function(opts)
@@ -164,6 +171,11 @@ vim.api.nvim_create_user_command("TSBuild", function(opts)
     build_xml()
     return
   end
+
+  if lang == "hyprlang" then
+    build_hyprlang()
+    return
+  end
 end, {
   nargs = "?",
   complete = function(ArgLead)
@@ -171,6 +183,10 @@ end, {
       return item:find("^" .. ArgLead)
     end, languages)
   end,
+})
+
+vim.filetype.add({
+  pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
 })
 
 vim.api.nvim_create_autocmd("FileType", {

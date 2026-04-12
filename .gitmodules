@@ -28,3 +28,6 @@
 [submodule "vendors/tree-sitters/xml"]
 	path = vendors/tree-sitters/xml
 	url = https://github.com/tree-sitter-grammars/tree-sitter-xml.git
+[submodule "vendors/tree-sitters/hyprlang"]
+	path = vendors/tree-sitters/hyprlang
+	url = https://github.com/tree-sitter-grammars/tree-sitter-hyprlang.git
