@@ -1,0 +1,6 @@
+[submodule "vendors/tree-sitters/javascript"]
+	path = vendors/tree-sitters/javascript
+	url = https://github.com/tree-sitter/tree-sitter-javascript.git
+[submodule "vendors/tree-sitters/typescript"]
+	path = vendors/tree-sitters/typescript
+	url = https://github.com/tree-sitter/tree-sitter-typescript.git
