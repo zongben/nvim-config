@@ -95,6 +95,6 @@ return {
       },
     })
 
-    vim.api.nvim_set_hl(0, "NvimTreeGitDirtyIcon", { fg = "#EBCB8B" })
+    -- vim.api.nvim_set_hl(0, "NvimTreeGitDirtyIcon", { fg = "#EBCB8B" })
   end,
 }
