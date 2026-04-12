@@ -6,7 +6,7 @@ local ts_path = path(config_path, "vendors", "tree-sitters")
 local parser_path = path(config_path, "parser")
 local queries_path = path(config_path, "queries")
 
-local languages = { "lua", "rust", "javascript", "typescript", "csharp", "html", "c", "bash", "jsdoc" }
+local languages = { "lua", "rust", "javascript", "typescript", "csharp", "html", "c", "bash" }
 
 local function prepend_line(filepath, line)
   local f = io.open(filepath, "r")
@@ -31,8 +31,6 @@ local build_javascript = function()
   local js_ts_path = path(ts_path, "javascript")
   vim.fn.system({ cli, "build", js_ts_path, "-o", path(parser_path, "javascript.so") })
   vim.fn.system({ "cp", "-r", path(js_ts_path, "queries", "."), path(queries_path, "javascript") })
-  local line = ";; inherits: jsdoc"
-  prepend_line(path(queries_path, "javascript", "highlights.scm"), line)
 end
 
 local build_typescript = function()
@@ -43,12 +41,6 @@ local build_typescript = function()
   prepend_line(path(queries_path, "typescript", "highlights.scm"), line)
   prepend_line(path(queries_path, "typescript", "locals.scm"), line)
   prepend_line(path(queries_path, "typescript", "tags.scm"), line)
-end
-
-local build_jsdoc = function()
-  local jsdoc_ts_path = path(ts_path, "jsdoc")
-  vim.fn.system({ cli, "build", jsdoc_ts_path, "-o", path(parser_path, "jsdoc.so") })
-  vim.fn.system({ "cp", "-r", path(jsdoc_ts_path, "queries", "."), path(queries_path, "jsdoc") })
 end
 
 local build_json = function()
@@ -88,7 +80,6 @@ local build_csharp = function()
 end
 
 local build_all = function()
-  build_jsdoc()
   build_javascript()
   build_typescript()
   build_json()
@@ -147,11 +138,6 @@ vim.api.nvim_create_user_command("TSBuild", function(opts)
 
   if lang == "csharp" then
     build_csharp()
-    return
-  end
-
-  if lang == "jsdoc" then
-    build_jsdoc()
     return
   end
 end, {
