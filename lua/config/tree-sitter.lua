@@ -35,7 +35,7 @@ end
 
 local build_typescript = function()
   local ts_ts_path = path(ts_path, "typescript")
-  vim.fn.system({ cli, "build", ts_ts_path, "-o", path(parser_path, "typescript.so") })
+  vim.fn.system({ cli, "build", path(ts_ts_path, "typescript"), "-o", path(parser_path, "typescript.so") })
   vim.fn.system({ "cp", "-r", path(ts_ts_path, "queries", "."), path(queries_path, "typescript") })
   local line = ";; inherits: javascript"
   prepend_line(path(queries_path, "typescript", "highlights.scm"), line)
