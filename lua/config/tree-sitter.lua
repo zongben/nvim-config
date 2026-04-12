@@ -155,7 +155,7 @@ vim.api.nvim_create_user_command("TSBuild", function(opts)
     return
   end
 end, {
-  nargs = 1,
+  nargs = "?",
   complete = function(ArgLead)
     return vim.tbl_filter(function(item)
       return item:find("^" .. ArgLead)
