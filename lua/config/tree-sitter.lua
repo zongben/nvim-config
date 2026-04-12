@@ -94,7 +94,7 @@ end
 local build_hyprlang = function()
   local hyprlang_ts_path = path(ts_path, "hyprlang")
   vim.fn.system({ cli, "build", hyprlang_ts_path, "-o", path(parser_path, "hyprlang.so") })
-  vim.fn.system({ "cp", "-r", path(hyprlang_ts_path, "queries", "queries", "."), path(queries_path, "hyprlang") })
+  vim.fn.system({ "cp", "-r", path(hyprlang_ts_path, "queries", "hyprlang", "."), path(queries_path, "hyprlang") })
 end
 
 local build_all = function()
