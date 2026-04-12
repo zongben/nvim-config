@@ -32,7 +32,7 @@ local build_javascript = function()
   vim.fn.system({ cli, "build", js_ts_path, "-o", path(parser_path, "javascript.so") })
   vim.fn.system({ "cp", "-r", path(js_ts_path, "queries", "."), path(queries_path, "javascript") })
   local line = ";; inherits: jsdoc"
-  prepend_line(path(queries_path, "jsdoc", "highlights.scm"), line)
+  prepend_line(path(queries_path, "javascript", "highlights.scm"), line)
 end
 
 local build_typescript = function()
