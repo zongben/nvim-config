@@ -4,3 +4,24 @@
 [submodule "vendors/tree-sitters/typescript"]
 	path = vendors/tree-sitters/typescript
 	url = https://github.com/tree-sitter/tree-sitter-typescript.git
+[submodule "vendors/tree-sitters/json"]
+	path = vendors/tree-sitters/json
+	url = https://github.com/tree-sitter/tree-sitter-json.git
+[submodule "vendors/tree-sitters/html"]
+	path = vendors/tree-sitters/html
+	url = https://github.com/tree-sitter/tree-sitter-html.git
+[submodule "vendors/tree-sitters/c"]
+	path = vendors/tree-sitters/c
+	url = https://github.com/tree-sitter/tree-sitter-c.git
+[submodule "vendors/tree-sitters/bash"]
+	path = vendors/tree-sitters/bash
+	url = https://github.com/tree-sitter/tree-sitter-bash.git
+[submodule "vendors/tree-sitters/rust"]
+	path = vendors/tree-sitters/rust
+	url = https://github.com/tree-sitter/tree-sitter-rust.git
+[submodule "vendors/tree-sitters/csharp"]
+	path = vendors/tree-sitters/csharp
+	url = https://github.com/tree-sitter/tree-sitter-c-sharp.git
+[submodule "vendors/tree-sitters/jsdoc"]
+	path = vendors/tree-sitters/jsdoc
+	url = https://github.com/tree-sitter/tree-sitter-jsdoc.git
