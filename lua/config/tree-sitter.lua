@@ -6,7 +6,7 @@ local ts_path = path(config_path, "vendors", "tree-sitters")
 local parser_path = path(config_path, "parser")
 local queries_path = path(config_path, "queries")
 
-local languages = { "lua", "rust", "javascript", "typescript", "csharp", "html", "c", "bash", "css" }
+local languages = { "lua", "rust", "javascript", "typescript", "csharp", "html", "c", "bash", "css", "xml" }
 
 local function prepend_line(filepath, line)
   local f = io.open(filepath, "r")
@@ -85,6 +85,12 @@ local build_css = function()
   vim.fn.system({ "cp", "-r", path(css_ts_path, "queries", "."), path(queries_path, "css") })
 end
 
+local build_xml = function()
+  local xml_ts_path = path(ts_path, "xml")
+  vim.fn.system({ cli, "build", xml_ts_path, "-o", path(parser_path, "xml.so") })
+  vim.fn.system({ "cp", "-r", path(xml_ts_path, "queries", "."), path(queries_path, "xml") })
+end
+
 local build_all = function()
   build_javascript()
   build_typescript()
@@ -95,6 +101,7 @@ local build_all = function()
   build_rust()
   build_csharp()
   build_css()
+  build_xml()
 end
 
 vim.api.nvim_create_user_command("TSBuild", function(opts)
@@ -150,6 +157,11 @@ vim.api.nvim_create_user_command("TSBuild", function(opts)
 
   if lang == "css" then
     build_css()
+    return
+  end
+
+  if lang == "xml" then
+    build_xml()
     return
   end
 end, {
