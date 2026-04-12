@@ -22,3 +22,6 @@
 [submodule "vendors/tree-sitters/csharp"]
 	path = vendors/tree-sitters/csharp
 	url = https://github.com/tree-sitter/tree-sitter-c-sharp.git
+[submodule "vendors/tree-sitters/css"]
+	path = vendors/tree-sitters/css
+	url = https://github.com/tree-sitter/tree-sitter-css.git
