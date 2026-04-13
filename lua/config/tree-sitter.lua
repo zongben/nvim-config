@@ -15,14 +15,14 @@ local build_parser = function(lang)
   end
 
   if lang == "sql" then
-    vim.fn.system({ "tree-sitter", "generate", src_path })
+    vim.system({ "tree-sitter", "generate" }, { cwd = src_path }):wait()
   end
 
-  vim.fn.system({ "tree-sitter", "build", src_path, "-o", joinpath(parser_path, lang .. ".so") })
+  vim.system({ "tree-sitter", "build", src_path, "-o", joinpath(parser_path, lang .. ".so") })
 end
 
 vim.api.nvim_create_user_command("TSBuild", function(opts)
-  vim.fn.system({ "mkdir", "-p", parser_path })
+  vim.system({ "mkdir", "-p", parser_path })
 
   local lang = opts.args
 
