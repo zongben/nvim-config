@@ -1,11 +1,11 @@
-local cli = "tree-sitter"
 local joinpath = vim.fs.joinpath
 
 local config_path = vim.fn.stdpath("config")
 local ts_path = joinpath(config_path, "vendors", "tree-sitters")
 local parser_path = joinpath(config_path, "parser")
 
-local languages = { "lua", "rust", "javascript", "typescript", "csharp", "html", "c", "bash", "css", "xml", "hyprlang" }
+local languages =
+  { "lua", "rust", "javascript", "typescript", "csharp", "html", "c", "bash", "css", "xml", "hyprlang", "sql" }
 
 local build_parser = function(lang)
   local src_path = joinpath(ts_path, lang)
@@ -14,7 +14,11 @@ local build_parser = function(lang)
     src_path = joinpath(ts_path, "typescript", "typescript")
   end
 
-  vim.fn.system({ cli, "build", src_path, "-o", joinpath(parser_path, lang .. ".so") })
+  if lang == "sql" then
+    vim.fn.system({ "tree-sitter", "generate", src_path })
+  end
+
+  vim.fn.system({ "tree-sitter", "build", src_path, "-o", joinpath(parser_path, lang .. ".so") })
 end
 
 vim.api.nvim_create_user_command("TSBuild", function(opts)
