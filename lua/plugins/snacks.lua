@@ -137,7 +137,7 @@ return {
         mode = { "n" },
       },
       {
-        "<leader>fb",
+        "<leader>bb",
         function()
           snacks.picker.buffers()
         end,
