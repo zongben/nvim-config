@@ -34,11 +34,17 @@
 (comment) @comment @spell
 (marginalia) @comment
 
+; ((literal) @number
+;    (#match? @number "^[-+]?%d+$"))
+;
+; ((literal) @float
+;   (#match? @float "^[-+]?%d*\.%d*$"))
+
 ((literal) @number
-   (#match? @number "^[-+]?%d+$"))
+   (#match? @number "^[-+]?[0-9]+$"))
 
 ((literal) @float
-  (#match? @float "^[-+]?%d*\.%d*$"))
+  (#match? @float "^[-+]?[0-9]*\.[0-9]*$"))
 
 (parameter) @parameter
 
