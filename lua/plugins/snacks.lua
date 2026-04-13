@@ -163,6 +163,9 @@ return {
       enable = true,
       top_down = false,
     },
+    input = {
+      enable = true,
+    },
     picker = {
       enable = true,
       sources = {
@@ -223,6 +226,11 @@ return {
       },
       lazygit = {
         border = true,
+      },
+      input = {
+        keys = {
+          i_esc = { "<esc>", { "cmp_close", "cancel" }, mode = "i", expr = true },
+        },
       },
     },
   },
