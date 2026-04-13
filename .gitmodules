@@ -31,6 +31,3 @@
 [submodule "vendors/tree-sitters/hyprlang"]
 	path = vendors/tree-sitters/hyprlang
 	url = https://github.com/tree-sitter-grammars/tree-sitter-hyprlang.git
-[submodule "vendors/tree-sitters/sql"]
-	path = vendors/tree-sitters/sql
-	url = https://github.com/DerekStride/tree-sitter-sql.git

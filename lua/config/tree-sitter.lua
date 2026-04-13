@@ -4,18 +4,13 @@ local config_path = vim.fn.stdpath("config")
 local ts_path = joinpath(config_path, "vendors", "tree-sitters")
 local parser_path = joinpath(config_path, "parser")
 
-local languages =
-  { "lua", "rust", "javascript", "typescript", "csharp", "html", "c", "bash", "css", "xml", "hyprlang", "sql" }
+local languages = { "lua", "rust", "javascript", "typescript", "csharp", "html", "c", "bash", "css", "xml", "hyprlang" }
 
 local build_parser = function(lang)
   local src_path = joinpath(ts_path, lang)
 
   if lang == "typescript" then
     src_path = joinpath(ts_path, "typescript", "typescript")
-  end
-
-  if lang == "sql" then
-    vim.system({ "tree-sitter", "generate" }, { cwd = src_path }):wait()
   end
 
   vim.system({ "tree-sitter", "build", src_path, "-o", joinpath(parser_path, lang .. ".so") })
