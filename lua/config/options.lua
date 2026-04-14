@@ -1,13 +1,9 @@
 vim.g.mapleader = " "
 vim.g.disable_autoformat = true
 
-vim.g.clipboard = {
-  copy = {
-    ["+"] = "wl-copy",
-    ["*"] = "wl-copy",
-  },
-  cache_enabled = 1,
-}
+if string.len(vim.fn.getreg("+")) == 0 then
+  vim.fn.setreg("+", " ")
+end
 vim.opt.clipboard = "unnamedplus"
 
 vim.opt.relativenumber = true
