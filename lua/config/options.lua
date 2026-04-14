@@ -1,7 +1,15 @@
 vim.g.mapleader = " "
 vim.g.disable_autoformat = true
 
+vim.g.clipboard = {
+  copy = {
+    ["+"] = "wl-copy",
+    ["*"] = "wl-copy",
+  },
+  cache_enabled = 1,
+}
 vim.opt.clipboard = "unnamedplus"
+
 vim.opt.relativenumber = true
 vim.opt.termguicolors = true
 vim.opt.confirm = true
