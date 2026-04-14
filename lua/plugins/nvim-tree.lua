@@ -53,6 +53,9 @@ return {
         vim.keymap.set("n", "l", edit_or_open, { buffer = bufnr })
         vim.keymap.set("n", "h", api.node.navigate.parent_close, { buffer = bufnr })
       end,
+      git = {
+        timeout = 2000,
+      },
       update_focused_file = {
         enable = true,
         update_root = {
