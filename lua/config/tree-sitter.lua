@@ -49,7 +49,10 @@ vim.filetype.add({
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = languages,
-  callback = function()
-    vim.treesitter.start()
+  callback = function(args)
+    local bufnr = args.buf
+    if not vim.treesitter.highlighter.active[bufnr] then
+      vim.treesitter.start(bufnr)
+    end
   end,
 })
