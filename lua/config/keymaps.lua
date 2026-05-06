@@ -29,5 +29,8 @@ map("n", "<leader>ca", vim.lsp.buf.code_action, {})
 -- Save
 map("n", "<C-s>", "<cmd>w<cr>", {})
 
+-- Restart
+map("n", "<leader>rr", "<cmd>restart<cr>", {})
+
 -- Quit
 map("n", "<leader>qq", "<cmd>qa<cr>", {})
