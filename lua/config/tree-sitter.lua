@@ -14,7 +14,18 @@ local build_parser = function(lang)
     src_path = joinpath(ts_path, "typescript", "typescript")
   end
 
-  vim.system({ "tree-sitter", "build", src_path, "-o", joinpath(parser_path, lang .. ".so") })
+  vim.system({ "tree-sitter", "build", src_path, "-o", joinpath(parser_path, lang .. ".so") }, function(out)
+    if out.stderr ~= "" then
+      vim.schedule(function()
+        vim.notify("Error building parser for " .. lang .. ": " .. out.stderr, vim.log.levels.ERROR)
+      end)
+      return
+    end
+
+    vim.schedule(function()
+      vim.notify('"' .. lang .. '"' .. " parser built successfully.", vim.log.levels.INFO)
+    end)
+  end)
 end
 
 vim.api.nvim_create_user_command("TSBuild", function(opts)
