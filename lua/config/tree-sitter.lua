@@ -15,7 +15,7 @@ local build_parser = function(lang)
   end
 
   vim.system({ "tree-sitter", "build", src_path, "-o", joinpath(parser_path, lang .. ".so") }, function(out)
-    if out.stderr ~= "" then
+    if out.code ~= 0 then
       vim.schedule(function()
         vim.notify("Error building parser for " .. lang .. ": " .. out.stderr, vim.log.levels.ERROR)
       end)
