@@ -11,7 +11,11 @@ local build_parser = function(lang)
   local src_path = joinpath(ts_path, lang)
 
   if lang == "typescript" then
-    src_path = joinpath(ts_path, "typescript", "typescript")
+    src_path = joinpath(src_path, "typescript")
+  end
+
+  if lang == "xml" then
+    src_path = joinpath(src_path, "xml")
   end
 
   vim.system({ "tree-sitter", "build", src_path, "-o", joinpath(parser_path, lang .. ".so") }, function(out)
