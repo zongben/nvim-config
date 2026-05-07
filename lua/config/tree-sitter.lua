@@ -8,6 +8,21 @@ local languages =
   { "lua", "rust", "javascript", "typescript", "csharp", "html", "c", "bash", "css", "xml", "hyprlang", "go", "sql" }
 
 local build_parser = function(lang)
+  local build = function(src_path)
+    vim.system({ "tree-sitter", "build", src_path, "-o", joinpath(parser_path, lang .. ".so") }, function(out)
+      if out.code ~= 0 then
+        vim.schedule(function()
+          vim.notify("Error building parser for " .. lang .. ": " .. out.stderr, vim.log.levels.ERROR)
+        end)
+        return
+      end
+
+      vim.schedule(function()
+        vim.notify('"' .. lang .. '"' .. " parser built successfully.", vim.log.levels.INFO)
+      end)
+    end)
+  end
+
   local src_path = joinpath(ts_path, lang)
 
   if lang == "typescript" then
@@ -18,18 +33,23 @@ local build_parser = function(lang)
     src_path = joinpath(src_path, "xml")
   end
 
-  vim.system({ "tree-sitter", "build", src_path, "-o", joinpath(parser_path, lang .. ".so") }, function(out)
-    if out.code ~= 0 then
-      vim.schedule(function()
-        vim.notify("Error building parser for " .. lang .. ": " .. out.stderr, vim.log.levels.ERROR)
+  if lang == "sql" then
+    local files = vim.fs.find({ "parser.c" }, { path = joinpath(src_path, "src"), type = "file" })
+    if #files == 0 then
+      vim.system({ "tree-sitter", "generate" }, { cwd = src_path }, function(out)
+        if out.code ~= 0 then
+          vim.schedule(function()
+            vim.notify("Error generating parser for " .. lang .. ": " .. out.stderr, vim.log.levels.ERROR)
+          end)
+          return
+        end
+        build(src_path)
       end)
       return
     end
+  end
 
-    vim.schedule(function()
-      vim.notify('"' .. lang .. '"' .. " parser built successfully.", vim.log.levels.INFO)
-    end)
-  end)
+  build(src_path)
 end
 
 vim.api.nvim_create_user_command("TSBuild", function(opts)
