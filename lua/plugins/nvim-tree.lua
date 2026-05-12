@@ -67,7 +67,16 @@ return {
         relativenumber = true,
         side = "right",
         width = function()
-          return math.floor(vim.opt.columns:get() * 0.25)
+          local col = vim.opt.columns:get()
+          local w = math.floor(col * 0.25)
+          if w < 45 then
+            w = 45
+          end
+
+          if w > col then
+            w = col
+          end
+          return w
         end,
       },
       actions = {
