@@ -4,8 +4,21 @@ local config_path = vim.fn.stdpath("config")
 local ts_path = joinpath(config_path, "vendors", "tree-sitters")
 local parser_path = joinpath(config_path, "parser")
 
-local languages =
-  { "lua", "rust", "javascript", "typescript", "csharp", "html", "c", "bash", "css", "xml", "hyprlang", "go", "sql" }
+local languages = {
+  "lua",
+  "rust",
+  "javascript",
+  "typescript",
+  "csharp",
+  "html",
+  "c",
+  "bash",
+  "css",
+  "xml",
+  "hyprlang",
+  "go",
+  "sql",
+}
 
 local build_parser = function(lang)
   local build = function(src_path)
@@ -82,6 +95,8 @@ end, {
 vim.filetype.add({
   pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
 })
+
+vim.treesitter.language.register("handlebars", "html")
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = languages,
