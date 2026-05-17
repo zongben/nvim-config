@@ -32,16 +32,13 @@ return {
           "bashls",
           "csharp_ls",
           "tailwindcss",
-          "gopls",
           "html",
           "jsonls",
           "lua_ls",
           "cssls",
           "ts_ls",
           "eslint",
-          "svelte",
           "rust_analyzer",
-          "prismals",
         },
         automatic_enable = {
           exclude = {
