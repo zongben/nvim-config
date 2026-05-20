@@ -2,7 +2,7 @@ return {
   "zongben/dbout.nvim",
   build = "npm install",
   lazy = "VeryLazy",
-  dir = "~/github/dbout.nvim",
+  -- dir = "~/github/dbout.nvim",
   keys = {
     {
       "<leader>db",
