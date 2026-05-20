@@ -18,7 +18,6 @@ local languages = {
   "hyprlang",
   "go",
   "sql",
-  "handlebars",
 }
 
 local build_parser = function(lang)
@@ -101,7 +100,7 @@ vim.filetype.add({
   pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
 })
 
-vim.treesitter.language.register("glimmer", "handlebars")
+vim.treesitter.language.register("html", "handlebars")
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = languages,

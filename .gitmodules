@@ -40,6 +40,3 @@
 [submodule "vendors/tree-sitters/lua"]
 	path = vendors/tree-sitters/lua
 	url = https://github.com/tree-sitter-grammars/tree-sitter-lua.git
-[submodule "vendors/tree-sitters/glimmer"]
-	path = vendors/tree-sitters/glimmer
-	url = https://github.com/ember-tooling/tree-sitter-glimmer.git
