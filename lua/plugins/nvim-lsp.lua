@@ -60,6 +60,9 @@ return {
           },
         },
       })
+      vim.lsp.config("html", {
+        filetypes = { "html", "text/html", "handlebars" },
+      })
     end,
   },
   {
