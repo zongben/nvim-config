@@ -166,6 +166,9 @@ return {
     input = {
       enable = true,
     },
+    image = {
+      enable = true,
+    },
     picker = {
       enable = true,
       sources = {
