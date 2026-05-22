@@ -107,6 +107,35 @@ return {
       },
     })
 
-    -- vim.api.nvim_set_hl(0, "NvimTreeGitDirtyIcon", { fg = "#EBCB8B" })
+    vim.api.nvim_create_autocmd("ColorScheme", {
+      pattern = "*",
+      callback = function()
+        local g_add = vim.api.nvim_get_hl(0, { name = "GitSignsAdd" }).fg
+        local g_change = vim.api.nvim_get_hl(0, { name = "GitSignsChange" }).fg
+        local g_delete = vim.api.nvim_get_hl(0, { name = "GitSignsDelete" }).fg
+
+        local new_cfg = { fg = g_add, bg = nil }
+        vim.api.nvim_set_hl(0, "NvimTreeGitNewIcon", new_cfg)
+        vim.api.nvim_set_hl(0, "NvimTreeGitFileNewHL", new_cfg)
+        vim.api.nvim_set_hl(0, "NvimTreeGitFolderNewHL", new_cfg)
+        vim.api.nvim_set_hl(0, "NvimTreeGitUntrackedIcon", new_cfg)
+        vim.api.nvim_set_hl(0, "NvimTreeGitFileUntrackedHL", new_cfg)
+        vim.api.nvim_set_hl(0, "NvimTreeGitFolderUntrackedHL", new_cfg)
+
+        vim.api.nvim_set_hl(0, "NvimTreeGitStagedIcon", new_cfg)
+        vim.api.nvim_set_hl(0, "NvimTreeGitFileStagedHL", new_cfg)
+        vim.api.nvim_set_hl(0, "NvimTreeGitFolderStagedHL", new_cfg)
+
+        local dirty_cfg = { fg = g_change, bg = nil }
+        vim.api.nvim_set_hl(0, "NvimTreeGitDirtyIcon", dirty_cfg)
+        vim.api.nvim_set_hl(0, "NvimTreeGitFileDirtyHL", dirty_cfg)
+        vim.api.nvim_set_hl(0, "NvimTreeGitFolderDirtyHL", dirty_cfg)
+
+        local del_cfg = { fg = g_delete, bg = nil }
+        vim.api.nvim_set_hl(0, "NvimTreeGitDeletedIcon", del_cfg)
+        vim.api.nvim_set_hl(0, "NvimTreeGitFileDeletedHL", del_cfg)
+        vim.api.nvim_set_hl(0, "NvimTreeGitFolderDeletedHL", del_cfg)
+      end,
+    })
   end,
 }
