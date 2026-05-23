@@ -30,7 +30,7 @@ map("n", "<leader>ca", vim.lsp.buf.code_action, {})
 map("n", "<C-s>", "<cmd>w<cr>", {})
 
 -- Restart
-map("n", "<leader>rr", "<cmd>restart<cr>", {})
+map("n", "<leader>mm", "<cmd>restart<cr>", {})
 
 -- Quit
 map("n", "<leader>qq", "<cmd>qa<cr>", {})
