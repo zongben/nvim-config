@@ -18,6 +18,7 @@ local languages = {
   "hyprlang",
   "go",
   "sql",
+  "zig"
 }
 
 local build_parser = function(lang)
