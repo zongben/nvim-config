@@ -26,10 +26,6 @@ map("n", "<leader>ll", "<cmd>Lazy<cr>", {})
 map("n", "<leader>rn", vim.lsp.buf.rename, {})
 map("n", "<leader>ca", vim.lsp.buf.code_action, {})
 
--- Save
-map("n", "<leader>ss", "<cmd>w<cr>", {})
-map("n", "<leader>sa", "<cmd>wa<cr>", {})
-
 -- Restart
 map("n", "<leader>rs", "<cmd>restart<cr>", {})
 
