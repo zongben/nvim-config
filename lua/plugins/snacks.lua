@@ -172,9 +172,6 @@ return {
     picker = {
       enable = true,
       sources = {
-        grep = {
-          finder = "fd",
-        },
         notifications = {
           on_show = stopinsert,
           actions = {
