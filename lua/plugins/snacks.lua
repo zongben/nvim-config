@@ -133,6 +133,7 @@ return {
         "<leader>bD",
         function()
           snacks.bufdelete.other()
+          vim.notify("Deleted other buffers", vim.log.levels.INFO)
         end,
         mode = { "n" },
       },
