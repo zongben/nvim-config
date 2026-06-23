@@ -116,6 +116,13 @@ return {
         mode = { "n" },
       },
       {
+        "<leader>br",
+        function()
+          vim.cmd("e")
+        end,
+        mode = { "n" },
+      },
+      {
         "<leader>bd",
         function()
           snacks.bufdelete()
