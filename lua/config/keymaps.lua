@@ -32,3 +32,7 @@ map("n", "<leader>qq", "<cmd>qa<cr>", {})
 vim.api.nvim_create_user_command("LspInfo", function()
   vim.cmd("checkhealth vim.lsp")
 end, {})
+
+vim.api.nvim_create_user_command("LspRestart", function()
+  vim.cmd("lsp restart")
+end, {})
