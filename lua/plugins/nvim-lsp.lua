@@ -31,19 +31,10 @@ return {
         ensure_installed = {
           "bashls",
           "csharp_ls",
-          "tailwindcss",
-          "html",
           "jsonls",
           "lua_ls",
-          "cssls",
           "ts_ls",
           "eslint",
-          "rust_analyzer",
-        },
-        automatic_enable = {
-          exclude = {
-            "sqls",
-          },
         },
       })
     end,
@@ -61,7 +52,7 @@ return {
         },
       })
       vim.lsp.config("html", {
-        filetypes = { "html", "text/html", "handlebars" },
+        filetypes = { "html", "text/html" },
       })
     end,
   },
