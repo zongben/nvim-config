@@ -41,11 +41,12 @@ return {
         automatic_installation = true,
         ensure_installed = {
           "bashls",
-          "csharp_ls",
           "jsonls",
           "lua_ls",
           "ts_ls",
           "eslint",
+          "html",
+          "roslyn_ls",
         },
       })
     end,
@@ -62,7 +63,22 @@ return {
           },
         },
       })
+
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = "razor",
+        callback = function(args)
+          vim.treesitter.start(args.buf, "html")
+        end,
+      })
     end,
+  },
+  {
+    "seblyng/roslyn.nvim",
+    ---@module 'roslyn.config'
+    ---@type RoslynNvimConfig
+    opts = {
+      -- your configuration comes here; leave empty for default settings
+    },
   },
   {
     "saghen/blink.cmp",
