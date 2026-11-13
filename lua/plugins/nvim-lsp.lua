@@ -63,6 +63,13 @@ return {
           },
         },
       })
+
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = "razor",
+        callback = function(args)
+          vim.treesitter.start(args.buf, "html")
+        end,
+      })
     end,
   },
   {
