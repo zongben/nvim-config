@@ -25,6 +25,13 @@ return {
     local snacks = require("snacks")
     return {
       {
+        "<leader>fd",
+        function()
+          snacks.picker.diagnostics()
+        end,
+        mode = { "n" },
+      },
+      {
         "<leader>fn",
         function()
           snacks.picker.notifications()
