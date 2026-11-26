@@ -238,9 +238,6 @@ return {
         lsp_references = {
           on_show = stopinsert,
         },
-        lsp_symbols = {
-          on_show = stopinsert,
-        },
         lsp_type_definitions = {
           on_show = stopinsert,
         },
