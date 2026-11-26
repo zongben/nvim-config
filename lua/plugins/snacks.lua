@@ -123,6 +123,20 @@ return {
         mode = { "n" },
       },
       {
+        "<leader>bp",
+        function()
+          vim.cmd("bp")
+        end,
+        mode = { "n" },
+      },
+      {
+        "<leader>bn",
+        function()
+          vim.cmd("bn")
+        end,
+        mode = { "n" },
+      },
+      {
         "<leader>br",
         function()
           vim.cmd("e")
