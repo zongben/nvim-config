@@ -67,14 +67,21 @@ return {
         mode = { "n" },
       },
       {
-        "<leader>yh",
+        "<leader>fb",
+        function()
+          snacks.picker.buffers()
+        end,
+        mode = { "n" },
+      },
+      {
+        "<leader>fy",
         function()
           snacks.picker.cliphist()
         end,
         mode = { "n" },
       },
       {
-        "<leader>gs",
+        "<leader>fc",
         function()
           snacks.picker.git_status()
         end,
@@ -116,13 +123,6 @@ return {
         mode = { "n" },
       },
       {
-        "<leader>gg",
-        function()
-          snacks.lazygit()
-        end,
-        mode = { "n" },
-      },
-      {
         "<leader>bp",
         function()
           vim.cmd("bp")
@@ -159,6 +159,13 @@ return {
         mode = { "n" },
       },
       {
+        "<leader>bb",
+        function()
+          vim.cmd("b#")
+        end,
+        mode = { "n" },
+      },
+      {
         "<leader>ba",
         function()
           snacks.bufdelete.all()
@@ -166,16 +173,16 @@ return {
         mode = { "n" },
       },
       {
-        "<leader>bb",
+        "<leader>ud",
         function()
-          snacks.picker.buffers()
+          snacks.picker.undo()
         end,
         mode = { "n" },
       },
       {
-        "<leader>ud",
+        "<leader>gg",
         function()
-          snacks.picker.undo()
+          snacks.lazygit()
         end,
         mode = { "n" },
       },
