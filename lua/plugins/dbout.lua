@@ -13,14 +13,7 @@ return {
     },
   },
   config = function()
-    require("dbout").setup({
-      ui = {
-        init_open = {
-          inspector = false,
-          viewer = false,
-        },
-      },
-    })
+    require("dbout").setup({})
 
     local cmp = require("blink.cmp")
     cmp.add_source_provider("dbout", {
